@@ -1,0 +1,19 @@
+SHELL (SCRIPT)🔧️: ///////////////////////////////////////////////////////////////////////
+
+# = comment
+
+#!/bin/bash = shebang construct (directory to the proper shell interpreter)
+
+read <var_name> = assigns the user input to a new <var_name>
+
+unset <var_name> = unsets a variable
+
+readonly = makes a variable "read only" (equivalent to C const keyword)
+
+echo <"str"> = output à la console
+
+"<str>" or '<str>' = string
+
+`<str + ops>` = output arithmetic operations
+
+[ $a == $b ] = proper syntax for assignement operations (uses long int)
