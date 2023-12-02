@@ -1,19 +1,25 @@
-SHELL (SCRIPT)🔧️: ///////////////////////////////////////////////////////////////////////
+#"THE" SHELL
+##Historical context
+1972.
 
-# = comment
+##
 
-#!/bin/bash = shebang construct (directory to the proper shell interpreter)
+###SHELL PROGRAMMING
 
-read <var_name> = assigns the user input to a new <var_name>
+- # = comment
 
-unset <var_name> = unsets a variable
+- #!/bin/bash = shebang construct (directory to the proper shell interpreter)
 
-readonly = makes a variable "read only" (equivalent to C const keyword)
+- read <var_name> = assigns the user input to a new <var_name>
 
-echo <"str"> = output à la console
+- unset <var_name> = unsets a variable
 
-"<str>" or '<str>' = string
+- readonly = makes a variable "read only" (equivalent to C const keyword)
 
-`<str + ops>` = output arithmetic operations
+- echo <str> = output à la console
 
-[ $a == $b ] = proper syntax for assignement operations (uses long int)
+- <str> or <str> = string
+
+- `expr <operations>` = output arithmetic operations
+
+- [ $a == $b ] = proper syntax for assignement operations (uses long int)
