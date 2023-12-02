@@ -1,8 +1,16 @@
-#THE SHELL
-##Historical context
-1972
+# THE SHELL
+## Historical context
+1971. Ken Thompson writes the first shell in history, the Thompson Shell, obviously
+missing a good chunk of functionalities present in modern shells, such as scripting,
+it is nonetheless precursor for accessible ergonomical file manipulation and command
+execution. The name shell comes from the fact that it "wraps around" an OS's kernel
+both as a safety and usability measure.
 
-###SHELL PROGRAMMING
+1973. Dennis Ritchie creates the C programming language at the AT&T labs, it's the basis
+for almost every programming language today.
+
+
+# SHELL PROGRAMMING
 
 - <hashtag> = comment (ascii symbol not used because of github formating)
 
