@@ -1,8 +1,6 @@
 #THE SHELL
 ##Historical context
-1972.
-
-##
+1972
 
 ###SHELL PROGRAMMING
 
