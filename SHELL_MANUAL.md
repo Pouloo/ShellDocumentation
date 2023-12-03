@@ -64,11 +64,17 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **$VAR_NAME** = Variable access, the dollar sign is the default prompt for bash.
 
-- **$0 $1 $2 $n** = Respective access to arguments specified to your script
+- **$0 $1 $2 $n** = Respective access to arguments specified to your script. $0 is logically the name of the script being run.
 
 - **$#** = Stores the number of arguments supplied to the scripts. You may view it as the shell equivalent of the C "`int argc`" parameter.
 
-- $* = Stores all arguments supplied in the command line.
+- **$*** = Stores all arguments supplied in the command line.
+
+- **$?** = The exit status of the last executed command, a (sort of) boolean value changing depending on the sucess of said command. Oddly enough, 1 signifies failure, while 0 means sucess.
+
+- **$$** = Stores the PID, identification number of the current Shell.
+
+-**$!** = Stores the id number of the last background command.
 
 - **'str'** or **"str"** = Both single and double quotation can be used to delimit a string in shell.
 
