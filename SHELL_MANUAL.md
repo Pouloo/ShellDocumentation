@@ -8,16 +8,16 @@ it is nonetheless precursor for accessible ergonomical file manipulation and com
 execution. The name shell comes from the fact that it "wraps around" an OS's kernel
 both as a safety and usability measure.
 
-1973: Dennis Ritchie creates the C programming language at the AT&T labs, it's the basis for almost every programming language today.
+1973: Dennis Ritchie creates the C programming language at the AT&T labs. By inspiring the syntax and the functionality of its successors, it is now considered the basis for almost every programming language widely used today, including Shell scripting.
 
-1977: Conception of the original Bourne shell, named after its creator Stephen Bourne.
+1977: Conception of the original Bourne shell, named after its creator Stephen Bourne. It is the implementation of the shell that brought much of the functionalities we know shell for today, such as pipes `|`, but most importantly scripting with control structures.
 
-1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox.
+1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox and the GNU project. Most widely used shell today.
 > [!NOTE]
-> Since Ubuntu 6.10, the shebang in the following "**#!/bin/sh**", appears to not direct towards the default BASH as an interpreter but instead uses DASH (Debian Almquist Shell), most likely a performance-related measure. This may cause interpreting problems on non-Debian distributions, hence why it is recomended to specify "**#!/bin/bash**".
+> Since Ubuntu 6.10, the shebang in the following form "**#!/bin/sh**", appears to not direct towards the default BASH as an interpreter but instead uses DASH (Debian Almquist Shell), most likely a performance-related measure. This may cause interpreting problems on non-Debian distributions, hence why it is recommended to specify "**#!/bin/bash**".
 
 ## Essential commands and syntax
-Commands and essential syntax that are a must-know for any beginner programmer in almost any compiled language, or otherwise to consistently naviguate and modify a filesystem. Here i won't detail all of the flags, as you can easily look up a manual page for detailed information of each command (**`man`** *`command_name`*). I will however feature the most commonly used flags.
+Commands and essential syntax that are a must-know for any beginner programmer in almost any compiled language, or otherwise to consistently naviguate and modify a filesystem.
 
 ### Syntax
 - **`command`** `-flag 1` `-flag 2` `-flag n` *`argument 1`* *`argument 2`* *`argument n`* = The proper syntax for command execution. In short, the command instructs ***what*** to do, flags define ***how*** the action will be done, and the arguments dictate ***what*** will be affected by the command. Some command however don't require arguments.
@@ -48,6 +48,9 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 - **`grep`** *`pattern`* = when used jointly with a command that displays any sort of formatted output, selectivly displays only those featuring the word specified as first argument. Most commonly preceded with `|`.
 
 # SHELL PROGRAMMING
+> [!NOTE]
+> The following part is dedicated to Shell as a scripting language. Indeed, despite merely consisting of a series of commands executing on after the other, this use of shell (In our case **BASH**) is considered a proper language, of a higher level than C nonetheless.
+
 ## General syntactic conventions
 Syntax specific or most used in shell *scripting*.
 
@@ -57,7 +60,9 @@ Syntax specific or most used in shell *scripting*.
 
 - **$VAR_NAME** = Variable access, the dollar sign is the default prompt for bash.
 
-- **$0 $1 $2 $n** = Respective access to arguments 
+- **$0 $1 $2 $n** = Respective access to arguments specified to your script
+
+-
 
 - **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*)
 
@@ -67,7 +72,7 @@ Syntax specific or most used in shell *scripting*.
 
 - **[** *$variable1* **==** *$variable2* **]** = General syntax for conditions in all control structures (if, elif, else...) used in shell. It notably uses the `long int` type.
 
-## Commands and expressions
+## Commands and structures
 
 - **`read`** *`var_name`* = Assigns the user input to a new or pre-declared *variable name*.
 
