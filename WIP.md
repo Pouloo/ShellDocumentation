@@ -13,6 +13,8 @@ both as a safety and usability measure.
 1977: Conception of the original Bourne shell, named after its creator Stephen Bourne.
 
 1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox.
+> [!NOTE]
+> Since Ubuntu 6.10, the shebang in the following "**#!/bin/sh**", appears to not direct towards the default BASH as an interpreter but instead uses DASH (Debian Almquist Shell), most likely a performance-related measure. This may cause interpreting problems on non-Debian distributions, hence why it is recomended to specify "**#!/bin/bash**".
 
 ## Essential commands and syntax
 Commands and essential syntax that are a must-know for any beginner programmer in almost any compiled language, or otherwise to consistently naviguate and modify a filesystem. Here i won't detail all of the flags, as you can easily look up a manual page for detailed information of each command (**`man`** *`command_name`*). I will however feature the most commonly used flags.
@@ -49,9 +51,15 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 ## General syntactic conventions
 Syntax specific or most used in shell *scripting*.
 
-- **#** = Signifies a comment. 
+- **#** = Signifies a comment.
 
-- **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems.
+- **VAR_NAME=var_contents** = Syntax for variable initialization, note that the data type is assumed automatically from what the variable contains. (A=1 stores an `int`, B="hello" stores a `string`...)
+
+- **$VAR_NAME** = Variable access, the dollar sign is the default prompt for bash.
+
+- **$0 $1 $2 $n** = Respective access to arguments 
+
+- **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*)
 
 - **'str'** or **"str"** = Both single and double quotation can be used to delimit a string in shell.
 
@@ -59,14 +67,12 @@ Syntax specific or most used in shell *scripting*.
 
 - **[** *$variable1* **==** *$variable2* **]** = General syntax for conditions in all control structures (if, elif, else...) used in shell. It notably uses the `long int` type.
 
--**VAR_NAME=***var_contents* = Syntax for variable initialization, note that the data type is assumed automatically from what the variable contains. (A=1)
-
 ## Commands and expressions
 
-- **`read`** *`var_name`* = assigns the user input to a new *variable name*
+- **`read`** *`var_name`* = Assigns the user input to a new or pre-declared *variable name*.
 
-- **`unset`** *`var_name`* = unsets a variable
+- **`unset`** *`var_name`* = Rids a variable of its value.
 
-- **`readonly`** *`var_name`* = makes a variable "read only" (equivalent to the C "const" keyword)
+- **`readonly`** *`var_name`* = Makes a variable "read only" (equivalent to the C "const" keyword). It therfor becomes unsable to take any new assignement.
 
-- **`echo`** *`"str"`* = Is indeed a command, that prints the strings specified as first argument 
+- **`echo`** *`"str"`* = Prints the string specified as first argument to the command line as formatted output. 
