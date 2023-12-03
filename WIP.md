@@ -1,14 +1,18 @@
 # THE SHELL
 ## Historical context
-1971. Ken Thompson writes the first shell in history, the Thompson Shell, obviously
+A short history of command line interpreters.
+
+1971: Ken Thompson writes the first shell in history, the Thompson Shell, obviously
 missing a good chunk of functionalities present in modern shells, such as scripting,
 it is nonetheless precursor for accessible ergonomical file manipulation and command
 execution. The name shell comes from the fact that it "wraps around" an OS's kernel
 both as a safety and usability measure.
 
-1973. Dennis Ritchie creates the C programming language at the AT&T labs, it's the basis for almost every programming language today.
+1973: Dennis Ritchie creates the C programming language at the AT&T labs, it's the basis for almost every programming language today.
 
-~1977. Conception of the original Bourne shell, named after its creator stephen bourne 
+1977: Conception of the original Bourne shell, named after its creator Stephen Bourne.
+
+1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox.
 ## Essential commands and syntax
 Commands and essential syntax that are a must-know for any beginner programmer in almost any compiled language, or otherwise to consistently naviguate and modify a filesystem. Here i won't detail all of the flags, as you can easily look up a manual page for detailed information of each command (**`man`** *`command_name`*). I will however feature the most commonly used flags.
 
@@ -23,12 +27,14 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - `\` or `/` = Delimiter for specifing directories. The first one (*backslash*) is typical of unix systems (linux), while the latter (*slash*) is the norm on windows systems.
 
+- `|` = pipe
+
 ### Commands
 - **`clear`** = Clears the terminal of all its formatted output.
 
 - **`pwd`** = Print working directory.
 
-- **`cd`** *`directory/`* = Change directory, takes the directory as argument.
+- **`cd`** *`/directory/`* = Change directory, takes the directory as argument.
 
 - **`ls`** = List files in current or specified directory. Most commonly used with `-l`.
 
@@ -42,9 +48,11 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 # SHELL PROGRAMMING
 ## General syntactic conventions
-- **`HASHTAG`** = Signifies a comment. 
+- **#** = Signifies a comment. 
 
-- #!/bin/sh = proper syntax for the **shebang construct** (directory to the proper shell interpreter),this directory is present by default on unix systems.
+- **#!/bin/sh** = proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems.
+
+- **'str'** or **"str"** = both single and double quotation can be used to delimit a string in shell.
 
 - **`read`** *`var_name`* = assigns the user input to a new *variable name*
 
@@ -53,8 +61,6 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 - **`readonly`** *`var_name`* = makes a variable "read only" (equivalent to the C "const" keyword)
 
 - **`echo`** *`"str"`* = Is indeed a command, that prints the strings specified as first argument 
-
-- **'str'** or **"str"** = both single and double quotation can be used to delimit a string in shell
 
 - **`expr`** operations= backticks are used to output arithmetic operations in conjunction with the **expr** keyword
 
