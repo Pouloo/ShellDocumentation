@@ -13,6 +13,7 @@ both as a safety and usability measure.
 1977: Conception of the original Bourne shell, named after its creator Stephen Bourne.
 
 1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox.
+
 ## Essential commands and syntax
 Commands and essential syntax that are a must-know for any beginner programmer in almost any compiled language, or otherwise to consistently naviguate and modify a filesystem. Here i won't detail all of the flags, as you can easily look up a manual page for detailed information of each command (**`man`** *`command_name`*). I will however feature the most commonly used flags.
 
@@ -25,7 +26,7 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - `~` = Defines the user's home directory. It's defined as a directory containing a user's personal files .
 
-- `\` or `/` = Delimiter for specifing directories. The first one (*backslash*) is typical of unix systems (linux), while the latter (*slash*) is the norm on windows systems.
+- `/` or `\` = Delimiter for specifing directories. The first one (*slash*) is typical of unix systems (linux), while the latter (*backslash*) is the norm on windows systems.
 
 - `|` = pipe
 
@@ -44,21 +45,21 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - **`grep`** *`pattern`* = when used jointly with a command that displays any sort of formatted output, selectivly displays only those featuring the word specified as first argument. Most commonly preceded with `|`.
 
-- **`find`** *`pattern`*
-
 # SHELL PROGRAMMING
 ## General syntactic conventions
-
 Syntax specific or most used in shell *scripting*.
+
 - **#** = Signifies a comment. 
 
-- **#!/bin/sh** = proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems.
+- **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems.
 
-- **'str'** or **"str"** = both single and double quotation can be used to delimit a string in shell.
+- **'str'** or **"str"** = Both single and double quotation can be used to delimit a string in shell.
 
-- **`expr`** operations= backticks are used to output arithmetic operations in conjunction with the **expr** keyword
+- `**expr** *operations*`` = Backticks are used to output arithmetic operations in conjunction with the **expr** keyword.
 
 - **[** *$variable1* **==** *$variable2* **]** = General syntax for conditions in all control structures (if, elif, else...) used in shell. It notably uses the `long int` type.
+
+-**VAR_NAME=***var_contents* = Syntax for variable initialization, note that the data type is assumed automatically from what the variable contains. (A=1)
 
 ## Commands and expressions
 
