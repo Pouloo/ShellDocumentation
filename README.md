@@ -8,9 +8,11 @@ As i mentionned, it is meant to be thorough documentation, but it prioritizes in
 > Still, if you wish for a more extensive coverage of the talked about themes, nothing is better than the standard UNIX user manual, to access , simply type **`man`** *`cmd`* where *cmd* is the command of which you want to learn the function, syntax, and much more (Works as well with standard C library functions).
 
 ### Caption and format
+To avoid confusion when explaining any aspect, i made all my explanations respect a few formatting conventions.
+
 - Listed elements like this sentence are the main points of information.
   
-- Whenever a command's or a keyword's syntax is displayed, it adhers to it's own format:
+- Whenever a command's or a keyword's syntax is talked about, it adhers to it's own format:
 **`keyword`** *`arguments/targets`* , the main, often eponymous (giving it's name to the whole command) element of syntax will be in **bold**, while any placeholder name will be in *italics* to signify it depends on user input, is an argument, or is dependant on the main keyword in any way.
 
 ### Contributing
