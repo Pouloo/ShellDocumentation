@@ -52,19 +52,23 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 > The following part is dedicated to Shell as a scripting language. Indeed, despite merely consisting of a series of commands executing on after the other, this use of shell (In our case **BASH**) is considered a proper language, of a higher level than C nonetheless.
 
 ## General syntactic conventions
-Syntax specific or most used in shell *scripting*.
+Syntax, proper usage of functionalities and mandatory structures specific to shell as a scripting language.
+
+- .sh = Proper extension of a shell script. Should be executed in your command line like this: `./test.sh`. It is indeed interpreted and not compiled, hence why it is called a script, and not a program.
+
+- **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*)
 
 - **#** = Signifies a comment.
 
-- **VAR_NAME=var_contents** = Syntax for variable initialization, note that the data type is assumed automatically from what the variable contains. (A=1 stores an `int`, B="hello" stores a `string`...)
+- **VAR_NAME=var_contents** = Syntax for variable initialization, note that the data type is assumed automatically from what the variable contains. (A=1 stores an `int`, B="hello" stores a `string`...). It is no obligation, but by convention variable names should be in uppercase.
 
 - **$VAR_NAME** = Variable access, the dollar sign is the default prompt for bash.
 
 - **$0 $1 $2 $n** = Respective access to arguments specified to your script
 
--
+- **$#** = Stores the number of arguments supplied to the scripts. You may view it as the shell equivalent of the C "`int argc`" parameter.
 
-- **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*)
+- $* = Stores all arguments supplied in the command line.
 
 - **'str'** or **"str"** = Both single and double quotation can be used to delimit a string in shell.
 
