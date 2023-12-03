@@ -48,11 +48,19 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 # SHELL PROGRAMMING
 ## General syntactic conventions
+
+Syntax specific or most used in shell *scripting*.
 - **#** = Signifies a comment. 
 
 - **#!/bin/sh** = proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems.
 
 - **'str'** or **"str"** = both single and double quotation can be used to delimit a string in shell.
+
+- **`expr`** operations= backticks are used to output arithmetic operations in conjunction with the **expr** keyword
+
+- **[** *$variable1* **==** *$variable2* **]** = General syntax for conditions in all control structures (if, elif, else...) used in shell. It notably uses the `long int` type.
+
+## Commands and expressions
 
 - **`read`** *`var_name`* = assigns the user input to a new *variable name*
 
@@ -61,7 +69,3 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 - **`readonly`** *`var_name`* = makes a variable "read only" (equivalent to the C "const" keyword)
 
 - **`echo`** *`"str"`* = Is indeed a command, that prints the strings specified as first argument 
-
-- **`expr`** operations= backticks are used to output arithmetic operations in conjunction with the **expr** keyword
-
-- **[** *$variable1* **==** *$variable2* **]** = General syntax for conditions in all control structures (if, elif, else...) used in shell. It notably uses the `long int` type.
