@@ -74,7 +74,7 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **$$** = Stores the PID, identification number of the current Shell.
 
--**$!** = Stores the id number of the last background command.
+- **$!** = Stores the id number of the last background command.
 
 - **'str'** or **"str"** = Both single and double quotation can be used to delimit a string in shell.
 
