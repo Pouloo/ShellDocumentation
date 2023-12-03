@@ -6,27 +6,36 @@ it is nonetheless precursor for accessible ergonomical file manipulation and com
 execution. The name shell comes from the fact that it "wraps around" an OS's kernel
 both as a safety and usability measure.
 
-1973. Dennis Ritchie creates the C programming language at the AT&T labs, it's the basis
-for almost every programming language today.
+1973. Dennis Ritchie creates the C programming language at the AT&T labs, it's the basis for almost every programming language today.
+
+~1977. Conception of the original Bourne shell, named after its creator stephen bourne 
+## ESSENTIAL COMMANDS
+> [!NOTE]
+> Commands that are a must-know for any beginner programmer in almost any compiled language, or otherwise to consistently naviguate and modify a filesystem. Here i won't detail all of the flags, as you can easily look up a manual page for detailed information of each command (**`man`** *`command_name`*). I will however feature the most commonly used ones.
+
+- **`pwd`**
+
+- `cd `
+
+- `ls`
 
 
 # SHELL PROGRAMMING
+## General syntactic conventions
+- **hashtag** = comment (ascii symbol not used because of github formating)
 
-- <hashtag> = comment (ascii symbol not used because of github formating)
+- !/bin/sh = proper syntax for the **shebang construct** (directory to the proper shell interpreter),this directory is present by default on unix systems.
 
-- #!/bin/sh = shebang construct (directory to the proper shell interpreter),
-directory present by default on unix systems
+- **read** *var_name* = assigns the user input to a new *variable name*
 
-- read <var_name> = assigns the user input to a new <var_name>
+- **unset** *var_name* = unsets a variable
 
-- unset <var_name> = unsets a variable
+- **readonly** *var_name* = makes a variable "read only" (equivalent to the C "const" keyword)
 
-- readonly = makes a variable "read only" (equivalent to the C "const"> keyword)
+- **echo** *str* = 
 
-- echo <str> = output à la console
+- **'_str_'** or **"_str_"** = both single and double quotation can be used to delimit a string in shell
 
-- <str> or <str> = string
+- **`expr _operations_`** = backticks are used to output arithmetic operations in conjunction with the **expr** keyword
 
-- `expr <operations>` = output arithmetic operations
-
-- [ $a == $b ] = proper syntax for assignement operations (uses long int)
+- **[ _$variable1_ == _$variable2_ ]** = proper syntax for assignement operation (uses long int)
