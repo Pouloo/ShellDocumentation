@@ -1,4 +1,7 @@
 # Shell Documentation
+> [!IMPORTANT]
+> Keep it mind this small project is intrinsically a constant WIP, since i use it as my own form of documentation. As i learn more, i will keep this repo updated with new commits.
+
 ## Description
 The following project is a personnal documentation for Shell basics, and Shell programming. It is meant to be both as descriptive and as simple as possible to help in remembering the various elements touched on in this short simplified manual.
 
@@ -15,6 +18,9 @@ To avoid confusion when explaining any aspect, i made all my explanations respec
 - Whenever a command's or a keyword's syntax is talked about, it adhers to it's own format:
 **`keyword`** *`arguments/targets`* , the main, often eponymous (giving it's name to the whole command) element of syntax will be in **bold**, while any placeholder name will be in *italics* to signify it depends on user input, is an argument, or is dependant on the main keyword in any way.
 
+- Footnoted elements generally won't be explained any more than they have been in said notes. View them as an invitation to do your own research.[^1]
+
+[^1]: this note won't go into much detail, it's just here to give you a lead (; .
 ### Contributing
 If you'd like to contribute to this project, please follow these guidelines:
 
