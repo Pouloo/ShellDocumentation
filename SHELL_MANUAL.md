@@ -49,16 +49,16 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 # SHELL PROGRAMMING
 > [!NOTE]
-> The following part is dedicated to Shell as a scripting language. Indeed, despite merely consisting of a series of commands executing on after the other, this use of shell (In our case **BASH**) is considered a proper language, of a higher level than C nonetheless.
+> The following part is dedicated to Shell as a scripting language. Indeed, despite merely consisting of a series of commands executing one after the other, this use of shell (In our case **BASH**) is considered a proper language, of a higher level than C nonetheless.
 
 ## General syntactic conventions
 Syntax, proper usage of functionalities and mandatory structures specific to shell as a scripting language.
 
-- .sh = Proper extension of a shell script. Should be executed in your command line like this: `./test.sh`. It is indeed interpreted and not compiled, hence why it is called a script, and not a program.
+- .sh = Proper extension of a shell script. Should be executed in your command line like this: `./test.sh`. It is indeed interpreted and not compiled, hence why it is often called a script.
 
-- **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*)
+- **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*).
 
-- **#** = Signifies a comment.
+- **#** = Signifies a comment. At first you may find them most useful to "comment out" portions of code you don't need, but you will ultimatly not find a better use for them than to leave notes for yourself and other potential contributors, because it is their primary function. Indeed, programmers are quite forgetful.
 
 - **VAR_NAME=var_contents** = Syntax for variable initialization, note that the data type is assumed automatically from what the variable contains. (A=1 stores an `int`, B="hello" stores a `string`...). It is no obligation, but by convention variable names should be in uppercase.
 
