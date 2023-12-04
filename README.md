@@ -1,6 +1,6 @@
 # Shell Documentation
 > [!IMPORTANT]
-> Keep it mind this small project is intrinsically a constant WIP, since i use it as my own form of documentation. As i learn more, i will keep this repo updated with new commits.
+> Keep it mind this small project is intrinsically a constant WIP, since i use it as my own form of documentation. As i learn more, i will keep this repository updated with new commits.
 
 ## Description
 The following project is a personnal documentation for Shell basics, and Shell programming. It is meant to be both as descriptive and as simple as possible to help in remembering the various elements touched on in this short simplified manual.
