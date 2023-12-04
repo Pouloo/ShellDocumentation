@@ -6,7 +6,7 @@
 The following project is personal documentation for Shell basics and Shell programming. It is meant to be both as descriptive and as simple as possible to help in remembering the various elements touched on in this short, simplified manual.
 
 ## Guidelines
-As i mentionned, it is meant to be thorough documentation, but it prioritizes intelligibility. Therefor, some aspects may be given less attention in favor of other decriptive points, such as the exact syntax. It is why for instance i won't detail all of the flags used for the described commands. View this manual as a simplifier, more beginner friendly version of standard documentation you may usually find.
+As I mentioned, it is meant to be thorough documentation, but it prioritizes intelligibility. Therefore, some aspects may be given less attention in favor of other descriptive points, such as the exact syntax. It is why, for instance, I won't detail all of the flags used for the described commands. View this manual as a simplified, more beginner-friendly version of standard documentation you may usually find.
 > [!NOTE]
 > Still, if you wish for a more extensive coverage of the talked about themes, nothing is better than the standard UNIX user manual, to access , simply type **`man`** *`cmd`* where *cmd* is the command of which you want to learn the function, syntax, and much more (Works as well with standard C library functions).
 
