@@ -18,7 +18,7 @@ To avoid confusion when explaining any aspect, i made all my explanations respec
 - Whenever a command's or a keyword's syntax is talked about, it adhers to it's own format:
 **`keyword`** *`arguments/targets`* , the main, often eponymous (giving it's name to the whole command) element of syntax will be in **bold**, while any placeholder name will be in *italics* to signify it depends on user input, is an argument, or is dependant on the main keyword in any way.
 
-- Footnoted elements generally won't be explained any more than they have been in said notes. View them as an invitation to do your own research.[^1]
+- Footnoted elements generally won't be explained in any more detail than they already have been. View them as an invitation to do your own research.[^1]
 
 [^1]: this note won't go into much detail, it's just here to give you a lead (; .
 ### Contributing
