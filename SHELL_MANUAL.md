@@ -22,30 +22,30 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 ### Syntax
 - **`command`** `-flag 1` `-flag 2` `-flag n` *`argument 1`* *`argument 2`* *`argument n`* = The proper syntax for command execution. In short, the command instructs ***what*** to do, flags define ***how*** the action will be done, and the arguments dictate ***what*** will be affected by the command. Some command however don't require arguments.
 
-- `.` = Defines the current directory.
+- `.` = Signifies the current directory in which you are situated.
 
-- `..` = Defines the parent directory (Directory above the current one).
+- `..` = Signifies the parent directory (Directory above the current one).
 
-- `~` = Defines the user's home directory. It's defined as a directory containing a user's personal files .
+- `~` = Signifies the user's home directory. It's defined as a directory containing a user's personal files .
 
 - `/` or `\` = Delimiter for specifing directories. The first one (*slash*) is typical of unix systems (linux), while the latter (*backslash*) is the norm on windows systems.
 
-- `|` = pipe
+- `|` = Pipe, allows for joined simultaneous execution of multiple commands. Some commands however don't "get along" when used with the pipe, therefore make sure you use commands that are relevent to eachother's functionalities and outputs.
 
 ### Commands
 - **`clear`** = Clears the terminal of all its formatted output.
 
-- **`pwd`** = Print working directory.
+- **`pwd`** = Prints the current directory (in which you are situated).
 
-- **`cd`** *`/directory/`* = Change directory, takes the directory as argument.
+- **`cd`** *`/directory/`* = Changes directory, takes the directory as argument.
 
-- **`ls`** = List files in current or specified directory. Most commonly used with `-l`.
+- **`ls`** = Lists files in the current or specified directory. Most commonly used with `-l`.
 
-- **`cat`** = Concatenate, displays the contents of any text featuring file. Most commonly used with `-e`.
+- **`cat`** = Concatenates, i.e displays the contents of any text-featuring file. Most commonly used with `-e`.
 
-- **`less`** = Similarly to cat, displays contents of a file in a tab you can naviguate from your command line with specified commands.
+- **`less`** = Similarly to cat, displays contents of a file in a tab you can naviguate from your command line with specified controls.
 
-- **`grep`** *`pattern`* = when used jointly with a command that displays any sort of formatted output, selectivly displays only those featuring the word specified as first argument. Most commonly preceded with `|`.
+- **`grep`** *`pattern`* = When used jointly with a command that displays any sort of formatted output, selectivly displays only those featuring the terms specified as first argument. Most commonly preceded with `|`.
 
 # SHELL PROGRAMMING
 > [!NOTE]
