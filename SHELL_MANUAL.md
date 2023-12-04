@@ -1,6 +1,6 @@
 # THE SHELL
 ## Historical context
-A short history of command line interpreters.
+A short history of command line shells.
 
 1971: Ken Thompson writes the first shell in history, the Thompson Shell, obviously
 missing a good chunk of functionalities present in modern shells, such as scripting,
@@ -12,7 +12,7 @@ both as a safety and usability measure.
 
 1977: Conception of the original Bourne shell, named after its creator Stephen Bourne. It is the implementation of the shell that brought much of the functionalities we know shell for today, such as pipes `|`, but most importantly scripting with control structures.
 
-1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox and the GNU project. Most widely used shell today.
+1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox and the GNU project. It is without a doubt the most widely used shell today.
 > [!NOTE]
 > Since Ubuntu 6.10, the shebang in the following form "**#!/bin/sh**", appears to not direct towards the default BASH as an interpreter but instead uses DASH (Debian Almquist Shell), most likely a performance-related measure. This may cause interpreting problems on non-Debian distributions, hence why it is recommended to specify "**#!/bin/bash**".
 
