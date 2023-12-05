@@ -70,7 +70,7 @@ note that arguments are by default separated by whitespaces[^1], therefore to in
 
 - **$#** = Stores the number of arguments supplied to the scripts. You may view it as the shell equivalent of the C "`int argc`" parameter.
 
-- **$*** = Stores all arguments supplied in the command line.
+- **$*** = An array (a.k.a, an array) that stores all arguments supplied in the command line when running the script (exept the script filename). You can therefore access it like you would any other array.
 
 - **$?** = The exit status of the last executed command, a (sort of) boolean value that changes depending on the success of said command. Oddly enough, 1 signifies failure, while 0 means success[^2].
 [^2] Traditionally, the `boolean` data type is used for expressions with only two possible cases, true representing a 1, or false representing a 0.
@@ -84,6 +84,8 @@ note that arguments are by default separated by whitespaces[^1], therefore to in
 - `**expr** *operations*`` = Backticks are used to output arithmetic operations in conjunction with the **expr** keyword.
 
 - **[** *$variable1* **==** *$variable2* **]** = General syntax for conditions in all control structures (if, elif, else...) used in shell. It notably uses the `long int` type.
+
+- ** ${TABLE[]}**
 
 ## Commands and structures
 
