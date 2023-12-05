@@ -37,13 +37,13 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - **`pwd`** = Prints the current directory (in which you are situated).
 
-- **`cd`** *`/directory/`* = Changes directory, takes the directory as argument.
+- **`cd`** *`/directory/`* = Changes the directory, takes the directory as argument.
 
-- **`ls`** = Lists files in the current or specified directory. Most commonly used with `-l`.
+- **`ls`** *`/directory/`* or *`file`* = Lists files in the current or specified directory. You can specify a filename present in the current as a first argument, although doing it without flags is not very useful. It is most commonly used with `-l`.
 
-- **`cat`** = Concatenates, i.e displays the contents of any text-featuring file. Most commonly used with `-e`.
+- **`cat`** = Concatenates, i.e displays the contents of any text-featuring file. It is most commonly used with `-e`.
 
-- **`less`** = Similarly to cat, displays contents of a file in a tab you can naviguate from your command line with specified controls.
+- **`less`** = Similarly to `cat`, it displays the contents of a file in a tab you can navigate from your command line with specified controls.
 
 - **`grep`** *`pattern`* = When used jointly with a command that displays any sort of formatted output, selectivly displays only those featuring the terms specified as first argument. Most commonly preceded with `|`.
 
