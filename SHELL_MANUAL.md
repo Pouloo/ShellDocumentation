@@ -65,21 +65,21 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 - **$VAR_NAME** = Syntax to access a variable, and therefore its value. Note that the dollar sign (which is the default prompt for bash) is used for accessing, and using it to assign a value to a variable will result in syntax errors.
 
 - **$0 $1 $2 $n** = Respective syntax for the access to arguments specified when running your script in your command line. $0 is logically the name of the script being run, and $1 is the argument after the script. `./your_shell_script.sh` `"argument 1"`,
-note that arguments are by default separated by whitespaces^[1], therefore to include arguments with spaces in their file name, you should use double quotations.
-^[1] Spaces, tabs, newlines and other "invisible characters", particularly those having a decimal value from 9 to 13, as well as 32, on the ASCII table.
-
+note that arguments are by default separated by whitespaces[^1], therefore to include arguments with spaces in their file name, you should use double quotations.
+[^1] Spaces, tabs, newlines and other "invisible characters", particularly those having a decimal value from 9 to 13, as well as 32, on the ASCII table.
 
 - **$#** = Stores the number of arguments supplied to the scripts. You may view it as the shell equivalent of the C "`int argc`" parameter.
 
 - **$*** = Stores all arguments supplied in the command line.
 
-- **$?** = The exit status of the last executed command, a (sort of) boolean value changing depending on the sucess of said command. Oddly enough, 1 signifies failure, while 0 means sucess.
+- **$?** = The exit status of the last executed command, a (sort of) boolean value that changes depending on the success of said command. Oddly enough, 1 signifies failure, while 0 means success[^2].
+[^2] Traditionally, the `boolean` data type is used for expressions with only two possible cases, true representing a 1, or false representing a 0.
 
-- **$$** = Stores the PID, identification number of the current Shell.
+- **$$** = Stores the PID, i.e, a unique identification number for the currently open terminal (Process IDentification).
 
-- **$!** = Stores the id number of the last background command.
+- **$!** = Stores the ID number of the last background command.
 
-- **'str'** or **"str"** = Both single and double quotation can be used to delimit a string in shell.
+- **'str'** or **"str"** = Delimiters used to tell when a string begins, and when it ends. Both single and double quotation can be used to delimit a string in shell.
 
 - `**expr** *operations*`` = Backticks are used to output arithmetic operations in conjunction with the **expr** keyword.
 
