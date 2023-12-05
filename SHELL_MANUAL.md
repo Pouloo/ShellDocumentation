@@ -60,7 +60,7 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **#** = Signifies a comment. At first, you may find them most useful to "comment out" portions of code you don't need, but you will ultimately not find any better use for them than to leave notes for yourself and other potential contributors because that is their primary function. Indeed, programmers are quite forgetful, and it is crucial that you make the most algorithmically challenging sections of your code, the most well and intelligibly described ones.
 
-- **VAR_NAME=var_contents** = Syntax for variable initialization, note that the data type is assumed automatically from what the variable contains. (A=1 stores an `integer`, B="hello" stores a `string`...). It is no obligation, but by convention variable names should be in uppercase.
+- **VAR_NAME=var_contents** = Syntax to initialize a variable, note that the data type is assumed automatically from what the variable contains. (A=1 stores an `integer`, B="hello" stores a `string`...). It is no obligation, but by convention variable names should be in uppercase.
 
 - **$VAR_NAME** = Syntax to access a variable, and therefore its value. Note that the dollar sign (which is the default prompt for bash) is used for accessing, and using it to assign a value to a variable will result in syntax errors.
 
@@ -83,9 +83,11 @@ note that arguments are by default separated by whitespaces[^1], therefore to in
 
 - `**expr** *operations*`` = Backticks are used to output arithmetic operations in conjunction with the **expr** keyword.
 
-- **[** *$variable1* **==** *$variable2* **]** = General syntax for conditions in all control structures (if, elif, else...) used in shell. It notably uses the `long int` type.
+- **[** *$variable1* **==** *$variable2* **]** = Proper syntax for conditions in all control structures (if, elif, else...) used in shell. It notably uses the `long int` type.
 
-- ** ${TABLE[]}**
+- **TABLE[_INDEX_]** = Proper syntax for initializing array variables. Indeed, arrays are considered a type of variable in shell, different than a scalar variable, i.e a single-value variable. Take into account that just like in C, the index starts at 0, which is often confusing for beginners.
+
+- **${TABLE[_INDEX_]}** = Proper syntax for accessing tables. In addition to the typical prompt ($), you also need to add curly brackets.
 
 ## Commands and structures
 
