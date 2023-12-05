@@ -41,30 +41,33 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - **`ls`** *`/directory/`* or *`file`* = Lists files in the current or specified directory. You can specify a filename present in the current as a first argument, although doing it without flags is not very useful. It is most commonly used with `-l`.
 
-- **`cat`** = Concatenates, i.e displays the contents of any text-featuring file. It is most commonly used with `-e`.
+- **`cat`** *`file`* = Concatenates, i.e displays the contents of any text-featuring file. It is most commonly used with `-e`.
 
-- **`less`** = Similarly to `cat`, it displays the contents of a file in a tab you can navigate from your command line with specified controls.
+- **`less`** *`file`* = Similarly to `cat`, it displays the contents of a file in a tab you can navigate from your command line with specified controls.
 
 - **`grep`** *`pattern`* = When used jointly with a command that displays any sort of formatted output, selectivly displays only those featuring the terms specified as first argument. Most commonly preceded with `|`.
 
 # SHELL PROGRAMMING
 > [!NOTE]
-> The following part is dedicated to Shell as a scripting language. Indeed, despite merely consisting of a series of commands executing one after the other, this use of shell (In our case **BASH**) is considered a proper language, of a higher level than C nonetheless.
+> The following part is dedicated to Shell as a scripting language. Indeed, despite merely consisting of a series of commands executing one after the other, this use of shell (in our case, **BASH**) is considered a proper language, of a higher level than C nonetheless.
 
 ## General syntactic conventions
 Syntax, proper usage of functionalities and mandatory structures specific to shell as a scripting language.
 
 - .sh = Proper extension of a shell script. Should be executed in your command line like this: `./test.sh`. It is indeed interpreted and not compiled, hence why it is often called a script.
 
-- **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*).
+- **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. You may in some capacity see it as the Shell equivalent for the C `#include <lib.h>`, only instead of directing towards a standard library of functions (`<lib.h>`), it directs towards the interpreter. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*).
 
-- **#** = Signifies a comment. At first you may find them most useful to "comment out" portions of code you don't need, but you will ultimatly not find a better use for them than to leave notes for yourself and other potential contributors, because it is their primary function. Indeed, programmers are quite forgetful.
+- **#** = Signifies a comment. At first, you may find them most useful to "comment out" portions of code you don't need, but you will ultimately not find any better use for them than to leave notes for yourself and other potential contributors because that is their primary function. Indeed, programmers are quite forgetful, and it is crucial that you make the most algorithmically challenging sections of your code, the most well and intelligibly described ones.
 
-- **VAR_NAME=var_contents** = Syntax for variable initialization, note that the data type is assumed automatically from what the variable contains. (A=1 stores an `int`, B="hello" stores a `string`...). It is no obligation, but by convention variable names should be in uppercase.
+- **VAR_NAME=var_contents** = Syntax for variable initialization, note that the data type is assumed automatically from what the variable contains. (A=1 stores an `integer`, B="hello" stores a `string`...). It is no obligation, but by convention variable names should be in uppercase.
 
-- **$VAR_NAME** = Variable access, the dollar sign is the default prompt for bash.
+- **$VAR_NAME** = Syntax to access a variable, and therefore its value. Note that the dollar sign (which is the default prompt for bash) is used for accessing, and using it to assign a value to a variable will result in syntax errors.
 
-- **$0 $1 $2 $n** = Respective access to arguments specified to your script. $0 is logically the name of the script being run.
+- **$0 $1 $2 $n** = Respective syntax for the access to arguments specified when running your script in your command line. $0 is logically the name of the script being run, and $1 is the argument after the script. `./your_shell_script.sh` `"argument 1"`,
+note that arguments are by default separated by whitespaces^[1], therefore to include arguments with spaces in their file name, you should use double quotations.
+^[1] Spaces, tabs, newlines and other "invisible characters", particularly those having a decimal value from 9 to 13, as well as 32, on the ASCII table.
+
 
 - **$#** = Stores the number of arguments supplied to the scripts. You may view it as the shell equivalent of the C "`int argc`" parameter.
 
