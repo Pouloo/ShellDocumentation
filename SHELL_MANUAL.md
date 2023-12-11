@@ -101,6 +101,11 @@ note that arguments are by default separated by whitespaces[^1], therefore to in
 
 - **${TABLE[_INDEX_]}** = Proper syntax for accessing tables. In addition to the typical prompt ($), you also need to add curly brackets.
 
+- **function_identifier(){**
+      *function_body*
+    **}**
+= Proper way to declare a function. Shell functions have a nearly identical functionality to their C counterparts. They therefore execell at dividing code into smaller sections
+
 ## Commands and structures
 
 - **`read`** *`var_name`* = Assigns the user input to a new or pre-declared *variable name*.
