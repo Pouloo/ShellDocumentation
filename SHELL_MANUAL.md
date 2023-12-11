@@ -30,7 +30,18 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - `/` or `\` = Delimiter for specifing directories. The first one (*slash*) is typical of unix systems (linux), while the latter (*backslash*) is the norm on windows systems.
 
+> [!NOTE]
+> To best understand the following syntax symbols, you need to know the different standard streams of information in UNIX systems. In short, when executing a command, function or program, date can go three different directions:
+> - Standard Input; abreviated *stdin*, and symbolized by a 0, is the stream where the computer takes its information *from*. The most common example of this is a keyboard, where a user types keys.
+> - Standard Out; abreviated *stdout*, and symbolized by a 1, is the emplacement where the computer takes its processed information *to*. Following the same example would make our *stdout* a screen, where the previously typed keys now appear as formatted UTF-8 characters.
+
 - `|` = Pipe, allows for joined simultaneous execution of multiple commands. Some commands however don't "get along" when used with the pipe, therefore make sure you use commands that are relevent to eachother's functionalities and outputs.
+
+- `>` = Output redirection,
+
+- `<` = Input redirection,
+
+- `2>` = Input redirection,
 
 ### Commands
 - **`clear`** = Clears the terminal of all its formatted output.
