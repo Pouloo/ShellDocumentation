@@ -30,19 +30,26 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - `/` or `\` = Delimiter for specifing directories. The first one (*slash*) is typical of unix systems (linux), while the latter (*backslash*) is the norm on windows systems.
 
-> [!NOTE]
+> [!IMPORTANT]
 > To best understand the following syntax symbols, you need to know the different standard streams of information in UNIX systems. In short, when executing a command, function, or program, data can go in three different directions:
-> - Standard Input; abbreviated *stdin*, and symbolized by a 0, is the stream where the computer takes its information *from*. The most common example of this is a keyboard, where a user types keys.
-> - Standard Output; abbreviated *stdout*, and symbolized by a 1, is the location where the computer takes its processed > > > information *to*. Following the same example would make our *stdout* a screen, where the previously typed keys now appear as > formatted UTF-8 characters.
-> - Standard Error; abbreviated *stderr*, and symbolized by a 2, is the channel to which the computer writes its error > messages or bug reports should the processing of the input fail, or the input be invalid. It is often quite close to *stdout*, because it is useful for the user to know there is an error. That is what happens when you try to name a file or folder with a `/` in it, you will receive a small message warning you that this character is invalid as a name.
+> - Standard Input; abbreviated *STDIN*, and symbolized by a 0, is the stream where the computer takes its information *from*. The most common example of this is a keyboard, where a user types keys.
+> - Standard Output; abbreviated *STDOUT*, and symbolized by a 1, is the location where the computer takes its processed information *to*. Following the same example would make our *STDOUT* a screen, where the previously typed keys now appear as formatted UTF-8 characters.
+> - Standard Error; abbreviated *STDERR*, and symbolized by a 2, is the channel to which the computer writes its error messages or bug reports should the processing of the input fail, or the input be invalid. It is often quite close to *STDOUT*, because it is useful for the user to know there is an error. That is what happens when you try to name a file or folder with a `/` in it, you will receive a small message warning you that this character is invalid as a name.
 
-- `|` = Pipe, allows for joined simultaneous execution of multiple commands. Some commands however don't "get along" when used with the pipe, therefore make sure you use commands that are relevent to eachother's functionalities and outputs.
+- *`cmd1`* **`|`** *`cmd2`*= Pipe, allows for joined simultaneous execution of multiple commands. Some commands however don't "get along" when used with the pipe, therefore make sure you use commands that are relevant to eachother's functionalities and outputs.
 
-- `>` = Output redirection,
+- *`cmd`* **`>`** *`file`* = Output redirection, while the default output stream is the terminal (displaying output as formatted characters), it is also possible to redirect it to a file. In other words, you can change where *STDOUT* leads to. 
 
-- `<` = Input redirection,
+- *`cmd`* **`<`** *`file`* = Input redirection instead of taking its input from the user, it will take it directly from a file.
 
-- `2>` = Input redirection,
+- *`cmd`* **`>>`** *`file`* = Because output redirection overwrites any pre-existing data in a file, adding two consecutive comparison signs will append the output instead of outright replacing it.
+
+- *`cmd`* **`<<`** *`"delimiter"`* = Proper syntax to start a *heredoc*, it's a type of file that allows for execution of a command with multiple inputs with the condition of ending its execution when a delimiter is met, in other words, the *heredoc* executes `cmd` until `"delimiter"` is met in the file.[^1]
+[^1] The most frequent delimiter is the EOF, i.e the End Of File. It's a signal to tell the computer that no more data can be read from the source (in our case, the file).
+
+- *`cmd`* **`2>`** *`file`* = Error redirection, it allows to change the location to which the usual error message caused by a bug. The error will of course still be present, it is merely the message informing the user of the error that will be printed somewhere else.
+
+- `command` `>` `/dev/null` = Syntax to discard the output, indeed sometimes we are not interested in the output of a command, it is in these cases that we may need the directory */dev/null/*, with *null* being a channel that completely removes any trace of data directed to it along with the data itself. It is often used with the syntax `2>&1`, which first directs *STDERR* to *STDOUT* and then *STDOUT* to *null*
 
 ### Commands
 - **`clear`** = Clears the terminal of all its formatted output.
@@ -77,8 +84,8 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 - **$VAR_NAME** = Syntax to access a variable, and therefore its value. Note that the dollar sign (which is the default prompt for bash) is used for accessing, and using it to assign a value to a variable will result in syntax errors.
 
 - **$0 $1 $2 $n** = Respective syntax for the access to arguments specified when running your script in your command line. $0 is logically the name of the script being run, and $1 is the argument after the script. `./your_shell_script.sh` `"argument 1"`,
-note that arguments are by default separated by whitespaces[^1], therefore to include arguments with spaces in their file name, you should use double quotations.
-[^1] Spaces, tabs, newlines and other "invisible characters", particularly those having a decimal value from 9 to 13, as well as 32, on the ASCII table.
+note that arguments are by default separated by whitespaces[^2], therefore to include arguments with spaces in their file name, you should use double quotations.
+[^2] Spaces, tabs, newlines and other "invisible characters", particularly those having a decimal value from 9 to 13, as well as 32, on the ASCII table.
 
 - **$#** = Stores the number of arguments supplied to the scripts. You may view it as the shell equivalent of the C "`int argc`" parameter.
 
@@ -104,7 +111,7 @@ note that arguments are by default separated by whitespaces[^1], therefore to in
 - **function_identifier(){**
       *function_body*
     **}**
-= Proper way to declare a function. Shell functions have a nearly identical functionality to their C counterparts. They therefore execell at dividing code into smaller sections
+= The proper way to declare a function. Shell functions have a nearly identical functionality to their C counterparts. They therefore excel at dividing code into smaller sections, and avoiding repetition. Though keep in mind that unlike in C, parameters are not initialized inside the parenthesis and are instead specified during a call (**`function_identifier`** *`param1`* *`param2`* ... *`param n`*) and they are accessed in the function body with the prompt followed by the index ($1 $2 ... $n).
 
 ## Commands and structures
 
