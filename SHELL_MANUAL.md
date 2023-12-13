@@ -36,7 +36,7 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 > - Standard Output; abbreviated *STDOUT*, and symbolized by a 1, is the location where the computer takes its processed information *to*. Following the same example would make our *STDOUT* a screen, where the previously typed keys now appear as formatted UTF-8 characters.
 > - Standard Error; abbreviated *STDERR*, and symbolized by a 2, is the channel to which the computer writes its error messages or bug reports should the processing of the input fail, or the input be invalid. It is often quite close to *STDOUT*, because it is useful for the user to know there is an error. That is what happens when you try to name a file or folder with a `/` in it, you will receive a small message warning you that this character is invalid as a name.
 
-- *`cmd1`* **`|`** *`cmd2`*= Pipe, allows for joined simultaneous execution of multiple commands. Some commands however don't "get along" when used with the pipe, therefore make sure you use commands that are relevant to eachother's functionalities and outputs.
+- *`cmd1`* **`|`** *`cmd2`*= Pipe, allows for joined simultaneous execution of multiple commands, more accurately, making *cmd1*'s output be *cmd2*'s input. Some commands however don't "get along" when used with the pipe, therefore make sure you use commands that are relevant to eachother's functionalities and outputs.
 
 - *`cmd`* **`>`** *`file`* = Output redirection, while the default output stream is the terminal (displaying output as formatted characters), it is also possible to redirect it to a file. In other words, you can change where *STDOUT* leads to. 
 
