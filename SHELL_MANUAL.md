@@ -1,11 +1,11 @@
 # THE SHELL
 ## Historical context
-A short history of command line shells.
+A short history of command line interpreters.
 
 1971: Ken Thompson writes the first shell in history, the Thompson Shell, obviously
 missing a good chunk of functionalities present in modern shells, such as scripting,
-it is nonetheless precursor for accessible ergonomical file manipulation and command
-execution. The name shell comes from the fact that it "wraps around" an OS's kernel
+it is nonetheless the precursor for  more accessible and ergonomical file manipulation and command
+execution. The name "shell" comes from the fact that it "wraps around" an OS's kernel
 both as a safety and usability measure.
 
 1973: Dennis Ritchie creates the C programming language at the AT&T labs. By inspiring the syntax and the functionality of its successors, it is now considered the basis for almost every programming language widely used today, including Shell scripting.
@@ -14,12 +14,14 @@ both as a safety and usability measure.
 
 1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox and the GNU project. It is without a doubt the most widely used shell today.
 > [!NOTE]
-> Since Ubuntu 6.10, the shebang in the following form "**#!/bin/sh**", appears to not direct towards the default BASH as an interpreter but instead uses DASH (Debian Almquist Shell), most likely a performance-related measure. This may cause interpreting problems on non-Debian distributions, hence why it is recommended to specify "**#!/bin/bash**".
+> Since the Ubuntu 6.10 linux distribution, the shebang in said distribution written in the following form "**#!/bin/sh**", appears to not direct towards the default BASH as an interpreter but instead uses DASH (Debian Almquist Shell), most likely a performance-related measure. This may cause interpreting problems on non-Debian distributions, hence why it is recommended to specify "**#!/bin/bash**".
 
-## Essential commands and syntax
+## BASH
+
+### COMMAND LINE INTERPRETER
 Commands and essential syntax that are a must-know for any beginner programmer in almost any compiled language, or otherwise to consistently naviguate and modify a filesystem.
 
-### Syntax
+#### Syntax
 - **`command`** `-flag 1` `-flag 2` `-flag n` *`argument 1`* *`argument 2`* *`argument n`* = The proper syntax for command execution. In short, the command instructs ***what*** to do, flags define ***how*** the action will be done, and the arguments dictate ***what*** will be affected by the command. Some command however don't require arguments.
 
 - `.` = Signifies the current directory in which you are situated.
@@ -51,7 +53,7 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - `command` `>` `/dev/null` = Syntax to discard the output, indeed sometimes we are not interested in the output of a command, it is in these cases that we may need the directory */dev/null/*, with *null* being a channel that completely removes any trace of data directed to it along with the data itself. It is often used with the syntax `2>&1`, which first directs *STDERR* to *STDOUT* and then *STDOUT* to *null*
 
-### Commands
+#### Commands
 - **`clear`** = Clears the terminal of all its formatted output.
 
 - **`pwd`** = Prints the current directory (in which you are situated).
@@ -66,11 +68,11 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - **`grep`** *`pattern`* = When used jointly with a command that displays any sort of formatted output, selectivly displays only those featuring the terms specified as first argument. Most commonly preceded with `|`.
 
-# SHELL PROGRAMMING
+### SCRIPTING
 > [!NOTE]
 > The following part is dedicated to Shell as a scripting language. Indeed, despite merely consisting of a series of commands executing one after the other, this use of shell (in our case, **BASH**) is considered a proper language, of a higher level than C nonetheless.
 
-## General syntactic conventions
+#### General syntactic conventions
 Syntax, proper usage of functionalities and mandatory structures specific to shell as a scripting language.
 
 - .sh = Proper extension of a shell script. Should be executed in your command line like this: `./test.sh`. It is indeed interpreted and not compiled, hence why it is often called a script.
@@ -113,7 +115,7 @@ note that arguments are by default separated by whitespaces[^2], therefore to in
     **}**
 = The proper way to declare a function. Shell functions have a nearly identical functionality to their C counterparts. They therefore excel at dividing code into smaller sections, and avoiding repetition. Though keep in mind that unlike in C, parameters are not initialized inside the parenthesis and are instead specified during a call (**`function_identifier`** *`param1`* *`param2`* ... *`param n`*) and they are accessed in the function body with the prompt followed by the index ($1 $2 ... $n).
 
-## Commands and structures
+#### Commands and structures
 
 - **`read`** *`var_name`* = Assigns the user input to a new or pre-declared *variable name*.
 
@@ -122,3 +124,24 @@ note that arguments are by default separated by whitespaces[^2], therefore to in
 - **`readonly`** *`var_name`* = Makes a variable "read only" (equivalent to the C "const" keyword). It therfor becomes unsable to take any new assignement.
 
 - **`echo`** *`"str"`* = Prints the string specified as first argument to the command line as formatted output. 
+
+# POWERSHELL
+
+### COMMAND LINE INTERPRETER
+The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, however as it was created in response to 
+
+#### Syntax
+
+#### Commands
+
+### SCRIPTING
+
+#### General syntactic conventions
+
+#### Commands and structures
+
+
+
+
+
+
