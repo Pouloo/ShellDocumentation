@@ -128,7 +128,7 @@ note that arguments are by default separated by whitespaces[^2], therefore to in
 # POWERSHELL
 
 ### COMMAND LINE INTERPRETER
-The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, however as it was created in response to 
+The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, however as it was created in response to the popularity of bash
 
 #### Syntax
 
