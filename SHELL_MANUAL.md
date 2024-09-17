@@ -18,6 +18,11 @@ It is still present on the latest windows versions, only in the form of the `cmd
 > [!NOTE]
 > Since the Ubuntu 6.10 linux distribution, the shebang in said distribution written in the following form "**#!/bin/sh**", appears to not direct towards the default BASH as an interpreter but instead uses DASH (Debian Almquist Shell), most likely a performance-related measure. This may cause interpreting problems on non-Debian distributions, hence why it is recommended to specify "**#!/bin/bash**".
 
+2004: First public presentation of MONAD (named after the book Monadology) a .NET framework based shell considered by its creators and users alike to be the prototype for POWERSHELL. The project's chief architect, Jeffrey Snover, meant it as a way to make linux tools available on a Windows system.[^1]
+[^1] We can notice part of this design philosophy with some default command aliases that come pre-assigned when installing the latest version of POWERSHELL, which make some commands almost identical to their unix counterpart.
+
+2006: Release of POWERSHELL 1.0 on Windows vista, XP, and server 2003.
+
 # BASH
 
 ## COMMAND LINE INTERPRETER
@@ -32,7 +37,7 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - `~` = Signifies the user's home directory. It's defined as a directory containing a user's personal files .
 
-- `/` or `\` = Delimiter for specifing directories. The first one (*slash*) is typical of unix systems (linux), while the latter (*backslash*) is the norm on windows systems.
+- `/` = Delimiter for specifing directories. The *slash* is typical of unix systems (linux, solaris, slackware...).
 
 > [!IMPORTANT]
 > To best understand the following syntax symbols, you need to know the different standard streams of information in UNIX systems. In short, when executing a command, function, or program, data can go in three different directions:
@@ -48,8 +53,8 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - *`cmd`* **`>>`** *`file`* = Because output redirection overwrites any pre-existing data in a file, adding two consecutive comparison signs will append the output instead of outright replacing it.
 
-- *`cmd`* **`<<`** *`"delimiter"`* = Proper syntax to start a *heredoc*, it's a type of file that allows for execution of a command with multiple inputs with the condition of ending its execution when a delimiter is met, in other words, the *heredoc* executes `cmd` until `"delimiter"` is met in the file.[^1]
-[^1] The most frequent delimiter is the EOF, i.e the End Of File. It's a signal to tell the computer that no more data can be read from the source (in our case, the file).
+- *`cmd`* **`<<`** *`"delimiter"`* = Proper syntax to start a *heredoc*, it's a type of file that allows for execution of a command with multiple inputs with the condition of ending its execution when a delimiter is met, in other words, the *heredoc* executes `cmd` until `"delimiter"` is met in the file.[^2]
+[^2] The most frequent delimiter is the EOF, i.e the End Of File. It's a signal to tell the computer that no more data can be read from the source (in our case, the file).
 
 - *`cmd`* **`2>`** *`file`* = Error redirection, it allows to change the location to which the usual error message caused by a bug. The error will of course still be present, it is merely the message informing the user of the error that will be printed somewhere else.
 
@@ -88,15 +93,15 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 - **$VAR_NAME** = Syntax to access a variable, and therefore its value. Note that the dollar sign (which is the default prompt for bash) is used for accessing, and using it to assign a value to a variable will result in syntax errors.
 
 - **$0 $1 $2 $n** = Respective syntax for the access to arguments specified when running your script in your command line. $0 is logically the name of the script being run, and $1 is the argument after the script. `./your_shell_script.sh` `"argument 1"`,
-note that arguments are by default separated by whitespaces[^2], therefore to include arguments with spaces in their file name, you should use double quotations.
-[^2] Spaces, tabs, newlines and other "invisible characters", particularly those having a decimal value from 9 to 13, as well as 32, on the ASCII table.
+note that arguments are by default separated by whitespaces[^3], therefore to include arguments with spaces in their file name, you should use double quotations.
+[^3] Spaces, tabs, newlines and other "invisible characters", particularly those having a decimal value from 9 to 13, as well as 32, on the ASCII table.
 
 - **$#** = Stores the number of arguments supplied to the scripts. You may view it as the shell equivalent of the C "`int argc`" parameter.
 
 - **$*** = An array (a.k.a, an array) that stores all arguments supplied in the command line when running the script (exept the script filename). You can therefore access it like you would any other array.
 
-- **$?** = The exit status of the last executed command, a (sort of) boolean value that changes depending on the success of said command. Oddly enough, 1 signifies failure, while 0 means success[^2].
-[^2] Traditionally, the `boolean` data type is used for expressions with only two possible cases, true representing a 1, or false representing a 0.
+- **$?** = The exit status of the last executed command, a (sort of) boolean value that changes depending on the success of said command. Oddly enough, 1 signifies failure, while 0 means success[^4].
+[^4] Traditionally, the `boolean` data type is used for expressions with only two possible cases, true representing a 1, or false representing a 0.
 
 - **$$** = Stores the PID, i.e, a unique identification number for the currently open terminal (Process IDentification).
 
@@ -129,21 +134,32 @@ note that arguments are by default separated by whitespaces[^2], therefore to in
 
 # POWERSHELL
 
-### COMMAND LINE INTERPRETER
-The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, however as it was created in response to the popularity of bash
+## COMMAND LINE INTERPRETER
+The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, even sporting a unique name for its commands, `cmdlets` (meaning commandlets, very adorable), however i find the one to one ressemblence of default aliases for some of these commands and basic BASH commands to be a proof of at least some degree of inspiration from BASH. Arguments for `cmdlets` are often to be preceded by an informative option-like `parameter`, but it can *sometimes* be ignored. 
 
-#### Syntax
+### Syntax
+- **`Command-Name.OptionFunc`** `-Parameter 1` *`argument 1`* `-Parameter 2` *`argument 2`* `-Parameter n` *`argument n`* = The proper syntax for command execution and argument specification. The `-Parameter 1` can *sometimes* be omitted, then, the argument simply has to be put in the order the parameter would precede it if it were there. Some commands accept specialized functions accessed like the C direct acces operator (`.`) which allow to shape the output in a specific way, it can therefore be considered the equivalent for BASH options, i.e, ***how*** a command behaves.
 
-#### Commands
+- `.` = Signifies the current directory in which you are situated.
 
-### SCRIPTING
+- `..` = Signifies the parent directory (Directory above the current one).
 
-#### General syntactic conventions
+- `~` = Signifies the user's home directory in accordance of course with the windows filesystem
 
-#### Commands and structures
+- `\` = Delimiter for specifing directories. The *backslash* is typical of Windows systems.
 
+### Commands
 
+- `New-Item`
 
+- `Copy-Item`
 
+- `Remove-Item`
 
+- `Rename-Item`
 
+- `Rename-Item`
+
+- `Get-Content`
+
+- `Invoke-Item`
