@@ -11,6 +11,9 @@ both as a safety and usability measure.
 
 1977: Conception of the original Bourne shell, named after its creator Stephen Bourne. It is the implementation of the shell that brought much of the functionalities we know shell for today, such as pipes `|`, but most importantly scripting with control structures.
 
+1980-90: Usage of DOS/MS-DOS (Microsoft Disk Operating System), Microsoft's first operating system, and one only usable without a graphical interface, and with a command line interface.
+It is still present on the latest windows versions, only in the form of the `cmd` application.
+
 1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox and the GNU project. It is without a doubt the most widely used shell today.
 > [!NOTE]
 > Since the Ubuntu 6.10 linux distribution, the shebang in said distribution written in the following form "**#!/bin/sh**", appears to not direct towards the default BASH as an interpreter but instead uses DASH (Debian Almquist Shell), most likely a performance-related measure. This may cause interpreting problems on non-Debian distributions, hence why it is recommended to specify "**#!/bin/bash**".
