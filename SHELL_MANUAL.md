@@ -135,11 +135,11 @@ note that arguments are by default separated by whitespaces[^3], therefore to in
 # POWERSHELL
 
 ## COMMAND LINE INTERPRETER
-The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, even sporting a unique name for its commands, `cmdlets` (meaning commandlets, very adorable), however i find the one to one ressemblence of default aliases for some of these commands and basic BASH commands to be a proof of at least some degree of inspiration from BASH. Arguments for `cmdlets` are often to be preceded by an informative option-like `parameter`, but it can *sometimes* be ignored. 
+The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, even sporting a unique name for its commands, `cmdlets` (meaning commandlets, very adorable), however i find the one to one ressemblence of default aliases for some of these commands and basic BASH commands to be a proof of at least some degree of inspiration from BASH, including the presence of a `man` command. Arguments for `cmdlets` are often to be preceded by an informative option-like `parameter`, but it can *sometimes* be ignored. 
 
 ### Syntax
 > [!IMPORTANT]
-> POWERSHELL having parameters
+> POWERSHELL having parameter-based arguments virually doubles the number of "options" for each command. Therefore, only the most common/useful parameters will be specified, i apologize in advance for the lack of exhaustiveness.
 - **`Command-Name.OptionFunc`** `-Parameter 1` *`argument 1`* `-Parameter 2` *`argument 2`* `-Parameter n` *`argument n`* = The proper syntax for command execution and argument specification. The `-Parameter 1` can *sometimes* be omitted, then, the argument simply has to be put in the order the parameter would precede it if it were there. Some commands accept specialized functions accessed like the C direct acces operator (`.`) which allow to shape the output in a specific way, it can therefore be considered the equivalent for BASH options, i.e, ***how*** a command behaves.
 
 - `.` = Signifies the current directory in which you are situated.
@@ -152,16 +152,20 @@ The base syntax of powershell couldn't be more different from bash and other uni
 
 ### Commands
 
-- **`New-Item`** *`-Path`* *`path_arg`* *`-ItemType`* *`type_arg`* =  The multipurpose filesystem element creator command in all its glory. Place the absolute or realtive path in which you want to create the file or folder (including the name of said file!) and the file type (File, Directory) Parameters can't be omitted.
+- **`New-Item`** *`-Path`* *`path_arg`* *`-ItemType`* *`type_arg`* =  The multipurpose filesystem element creator command in all its glory. Place the absolute or realtive path in which you want to create the file or folder (including the name of said file!) and the file type (Arguments `File`, `Directory`, `SymbolicLink`, `Junction`, `HardLink`) Parameters can be omitted(`New-Item newfile`). Doesn't have default aliases.
 
-- `Copy-Item`
+- **`Copy-Item`** *`-Path`* *`path_arg`* *`-Destination`* *`dest_arg`* = Self explanatory item copying function. Parameters can be omitted(`Copy-Item src dest`). It has the default aliases `cp` and `copy`.
 
-- `Remove-Item`
+<!-- WIP -->
 
-- `Rename-Item`
+<!-- - **`Remove-Item`** *`-Path`* *`path_arg`* -->
 
-- `Rename-Item`
+<!-- - `Rename-Item` -->
 
-- `Get-Content`
+<!-- - `Rename-Item` -->
 
-- `Invoke-Item`
+<!-- - `Get-Content` -->
+
+<!-- - `Invoke-Item` -->
+
+<!-- - Get-ChildItem -->
