@@ -15,13 +15,13 @@ both as a safety and usability measure.
 It is still present on the latest windows versions, only in the form of the `cmd` application.
 
 1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox and the GNU project. It is without a doubt the most widely used shell today.
-> [!NOTE]
-> Since the Ubuntu 6.10 linux distribution, the shebang in said distribution written in the following form "**#!/bin/sh**", appears to not direct towards the default BASH as an interpreter but instead uses DASH (Debian Almquist Shell), most likely a performance-related measure. This may cause interpreting problems on non-Debian distributions, hence why it is recommended to specify "**#!/bin/bash**".
 
 2004: First public presentation of MONAD (named after the book Monadology) a .NET framework based shell considered by its creators and users alike to be the prototype for POWERSHELL. The project's chief architect, Jeffrey Snover, meant it as a way to make linux tools available on a Windows system.[^1]
 [^1] We can notice part of this design philosophy with some default command aliases that come pre-assigned when installing the latest version of POWERSHELL, which make some commands almost identical to their unix counterpart.
 
 2006: Release of POWERSHELL 1.0 on Windows vista, XP, and server 2003. The latest version of powershell is POWERSHELL 5.0, and comes with most feature we expect from a modern CLI.
+> [!NOTE]
+> Since the Ubuntu 6.10 linux distribution, the shebang in said distribution written in the following form "**#!/bin/sh**", appears to not direct towards the default BASH as an interpreter but instead uses DASH (Debian Almquist Shell), most likely a performance-related measure. This may cause interpreting problems on non-Debian distributions, hence why it is recommended to specify "**#!/bin/bash**".
 
 # BASH
 
@@ -135,11 +135,12 @@ note that arguments are by default separated by whitespaces[^3], therefore to in
 # POWERSHELL
 
 ## COMMAND LINE INTERPRETER
-The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, even sporting a unique name for its commands, `cmdlets` (meaning commandlets, very adorable), however i find the one to one ressemblence of default aliases for some of these commands and basic BASH commands to be a proof of at least some degree of inspiration from BASH, including the presence of a `man` command. Arguments for `cmdlets` are often to be preceded by an informative option-like `parameter`, but it can *sometimes* be ignored. 
+> [!NOTE]
+> The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, even sporting a unique name for its commands, `cmdlets` (meaning commandlets, very adorable), however i find the one to one ressemblence of default aliases for some of these commands and basic BASH commands to be a proof of at least some degree of inspiration from BASH, including the presence of a `man` command. Arguments for `cmdlets` are often to be preceded by an informative option-like `parameter`, but it can *sometimes* be ignored. 
 
 ### Syntax
-> [!IMPORTANT]
-> POWERSHELL having parameter-based arguments virually doubles the number of "options" for each command. Therefore, only the most common/useful parameters will be specified, i apologize in advance for the lack of exhaustiveness.
+> [!NOTE]
+> POWERSHELL having parameter-based arguments virtually doubles the number of "options" for each command. Therefore, only the most common/useful parameters will be specified, i apologize in advance for the lack of exhaustiveness.
 - **`Command-Name.OptionFunc`** `-Parameter 1` *`argument 1`* `-Parameter 2` *`argument 2`* `-Parameter n` *`argument n`* = The proper syntax for command execution and argument specification. The `-Parameter 1` can *sometimes* be omitted, then, the argument simply has to be put in the order the parameter would precede it if it were there. Some commands accept specialized functions accessed like the C direct acces operator (`.`) which allow to shape the output in a specific way, it can therefore be considered the equivalent for BASH options, i.e, ***how*** a command behaves.
 
 - `.` = Signifies the current directory in which you are situated.
@@ -162,10 +163,16 @@ The base syntax of powershell couldn't be more different from bash and other uni
 
 <!-- - `Rename-Item` -->
 
+<!-- - `Get-Location` -->
+
 <!-- - `Rename-Item` -->
 
 <!-- - `Get-Content` -->
 
 <!-- - `Invoke-Item` -->
+
+<!-- - Get-ChildItem -->
+
+<!-- - Get-ChildItem -->
 
 <!-- - Get-ChildItem -->
