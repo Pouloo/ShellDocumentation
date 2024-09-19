@@ -84,43 +84,40 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - .sh = Proper extension of a shell script. Should be executed in your command line like this: `./test.sh`. It is indeed interpreted and not compiled, hence why it is often called a script.
 
-- **#!/bin/sh** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. You may in some capacity see it as the Shell equivalent for the C `#include <lib.h>`, only instead of directing towards a standard library of functions (`<lib.h>`), it directs towards the interpreter. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*).
+- **`#!/bin/sh`** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. You may in some capacity see it as the Shell equivalent for the C `#include <lib.h>`, only instead of directing towards a standard library of functions (`<lib.h>`), it directs towards the interpreter. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*).
 
-- **#** = Signifies a comment. At first, you may find them most useful to "comment out" portions of code you don't need, but you will ultimately not find any better use for them than to leave notes for yourself and other potential contributors because that is their primary function. Indeed, programmers are quite forgetful, and it is crucial that you make the most algorithmically challenging sections of your code, the most well and intelligibly described ones.
+- **`#`** = Signifies a comment. At first, you may find them most useful to "comment out" portions of code you don't need, but you will ultimately not find any better use for them than to leave notes for yourself and other potential contributors because that is their primary function. Indeed, programmers are quite forgetful, and it is crucial that you make the most algorithmically challenging sections of your code, the most well and intelligibly described ones.
 
-- **VAR_NAME=var_contents** = Syntax to initialize a variable, note that the data type is assumed automatically from what the variable contains. (A=1 stores an `integer`, B="hello" stores a `string`...). It is no obligation, but by convention variable names should be in uppercase.
+- **`VAR_NAME=var_contents`** = Syntax to initialize a variable, note that the data type is assumed automatically from what the variable contains. (A=1 stores an `integer`, B="hello" stores a `string`...). It is no obligation, but by convention variable names should be in uppercase.
 
-- **$VAR_NAME** = Syntax to access a variable, and therefore its value. Note that the dollar sign (which is the default prompt for bash) is used for accessing, and using it to assign a value to a variable will result in syntax errors.
+- **`$VAR_NAME`** = Syntax to access a variable, and therefore its value. Note that the dollar sign (which is the default prompt for bash) is used for accessing, and using it to assign a value to a variable will result in syntax errors.
 
-- **$0 $1 $2 $n** = Respective syntax for the access to arguments specified when running your script in your command line. $0 is logically the name of the script being run, and $1 is the argument after the script. `./your_shell_script.sh` `"argument 1"`,
+- **`$0 $1 $2 $n`** = Respective syntax for the access to arguments specified when running your script in your command line. $0 is logically the name of the script being run, and $1 is the argument after the script. `./your_shell_script.sh` `"argument 1"`,
 note that arguments are by default separated by whitespaces[^3], therefore to include arguments with spaces in their file name, you should use double quotations.
 [^3] Spaces, tabs, newlines and other "invisible characters", particularly those having a decimal value from 9 to 13, as well as 32, on the ASCII table.
 
-- **$#** = Stores the number of arguments supplied to the scripts. You may view it as the shell equivalent of the C "`int argc`" parameter.
+- **`$#`** = Stores the number of arguments supplied to the scripts. You may view it as the shell equivalent of the C "`int argc`" parameter.
 
-- **$*** = An array (a.k.a, an array) that stores all arguments supplied in the command line when running the script (exept the script filename). You can therefore access it like you would any other array.
+- **`$*`** = An array (a.k.a, an array) that stores all arguments supplied in the command line when running the script (exept the script filename). You can therefore access it like you would any other array.
 
-- **$?** = The exit status of the last executed command, a (sort of) boolean value that changes depending on the success of said command. Oddly enough, 1 signifies failure, while 0 means success[^4].
+- **`$?`** = The exit status of the last executed command, a (sort of) boolean value that changes depending on the success of said command. Oddly enough, 1 signifies failure, while 0 means success[^4].
 [^4] Traditionally, the `boolean` data type is used for expressions with only two possible cases, true representing a 1, or false representing a 0.
 
-- **$$** = Stores the PID, i.e, a unique identification number for the currently open terminal (Process IDentification).
+- **`$$`** = Stores the PID, i.e, a unique identification number for the currently open terminal (Process IDentification).
 
-- **$!** = Stores the ID number of the last background command.
+- **`$!`** = Stores the ID number of the last background command.
 
-- **'str'** or **"str"** = Delimiters used to tell when a string begins, and when it ends. Both single and double quotation can be used to delimit a string in shell.
+- **`'str'`** or **`"str"`** = Delimiters used to tell when a string begins, and when it ends. Both single and double quotation can be used to delimit a string in shell.
 
-- `**expr** *operations*`` = Backticks are used to output arithmetic operations in conjunction with the **expr** keyword.
+- ``**expr** *operations*`` = Backticks are used to output arithmetic operations in conjunction with the **expr** keyword.
 
 - **[** *$variable1* **==** *$variable2* **]** = Proper syntax for conditions in all control structures (if, elif, else...) used in shell. It notably uses the `long int` type.
 
-- **TABLE[_INDEX_]** = Proper syntax for initializing array variables. Indeed, arrays are considered a type of variable in shell, different than a scalar variable, i.e a single-value variable. Take into account that just like in C, the index starts at 0, which is often confusing for beginners.
+- **`TABLE[_INDEX_]`** = Proper syntax for initializing array variables. Indeed, arrays are considered a type of variable in shell, different than a scalar variable, i.e a single-value variable. Take into account that just like in C, the index starts at 0, which is often confusing for beginners.
 
-- **${TABLE[_INDEX_]}** = Proper syntax for accessing tables. In addition to the typical prompt ($), you also need to add curly brackets.
+- **`${TABLE[_INDEX_]}`** = Proper syntax for accessing tables. In addition to the typical prompt ($), you also need to add curly brackets.
 
-- **function_identifier(){**
-      *function_body*
-    **}**
-= The proper way to declare a function. Shell functions have a nearly identical functionality to their C counterparts. They therefore excel at dividing code into smaller sections, and avoiding repetition. Though keep in mind that unlike in C, parameters are not initialized inside the parenthesis and are instead specified during a call (**`function_identifier`** *`param1`* *`param2`* ... *`param n`*) and they are accessed in the function body with the prompt followed by the index ($1 $2 ... $n).
+- **`function_identifier()** *{function_body}`* = The proper way to declare a function. Shell functions have a nearly identical functionality to their C counterparts. They therefore excel at dividing code into smaller sections, and avoiding repetition. Though keep in mind that unlike in C, parameters are not initialized inside the parenthesis and are instead specified during a call (**`function_identifier`** *`param1`* *`param2`* ... *`param n`*) and they are accessed in the function body with the prompt followed by the index ($1 $2 ... $n).
 
 ### Commands and structures
 
