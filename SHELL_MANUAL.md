@@ -1,4 +1,5 @@
 # Historical context
+
 A short history of command line interpreters.
 
 1971: Ken Thompson writes the first shell in history, the Thompson Shell, obviously
@@ -25,9 +26,11 @@ both as a safety and usability measure.
 # BASH
 
 ## COMMAND LINE INTERPRETER
+
 Commands and essential syntax that are a must-know for any beginner programmer in almost any compiled language, or otherwise to consistently naviguate and modify a filesystem.
 
 ### Syntax
+
 - **`command`** `-flag 1` `-flag 2` `-flag n` *`argument 1`* *`argument 2`* *`argument n`* = The proper syntax for command execution. In short, the command instructs ***what*** to do, flags define ***how*** the action will be done, and the arguments dictate ***what*** will be affected by the command. Some command however don't require arguments.
 
 > [!IMPORTANT]
@@ -60,6 +63,7 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 - `command` `>` `/dev/null` = Syntax to discard the output, indeed sometimes we are not interested in the output of a command, it is in these cases that we may need the directory */dev/null/*, with *null* being a channel that completely removes any trace of data directed to it along with the data itself. It is often used with the syntax `2>&1`, which first directs *STDERR* to *STDOUT* and then *STDOUT* to *null*
 
 ### Commands (basic)
+
 - **`clear`** = Clears the terminal of all its formatted output.
 
 - **`pwd`** = Prints the current directory (in which you are situated).
@@ -74,13 +78,15 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - **`less`** *`file`* = Similarly to `cat`, it displays the contents of a file in a tab you can navigate from your command line with specified controls.
 
-- **`grep`** *`pattern`* = When used jointly with a command that displays any sort of formatted output, selectivly displays only those featuring the terms specified as first argument. Most commonly preceded with `|`.
+- **`more`** *`file`* = 
 
-<!-- - **`wc`** -->
+- **`grep`** *`pattern`* = When used jointly with a command that displays any sort of formatted output, selectivly displays only those matching patterns of words specified as first argument. Must be preceded with `|`.
+
+<!-- - **`wc`** = Content counter, saide content can be anything between the number of characters, -->
 
 ### Commands (advanced)
 
-- **`alias`** *`identifier="cmd1; cmd2; cmdn"`* = Set alias, it can be anything from a series of in-order executed commands to a script functions called by a user defined `identifier`, allowing for simplicity and egonomics all from the comfort of your shell.
+- **`alias`** *`identifier="cmd1; cmd2; cmdn"`* = Set alias, it can be anything from a series of in-order executed commands to script functions called by a user defined `identifier`, allowing for simplicity and egonomics within the comfort of the terminal.
 
 <!-- - **`sed`** -->
 
@@ -88,15 +94,19 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 <!-- - **`ifconfig`** -->
 
-<!-- - **`ifconfig`** -->
+<!-- - **`source`** -->
+
+<!-- **`export`** -->
 
 <!-- - **`git`** -->
 
 ## SCRIPTING
+
 > [!NOTE]
 > The following part is dedicated to Shell as a scripting language. Indeed, despite merely consisting of a series of commands executing one after the other, this use of shell (in our case, **BASH**) is considered a proper language, of a higher level than C nonetheless.
 
 ### Syntax and variables
+
 Syntax, proper usage of functionalities and mandatory structures specific to shell as a scripting language.
 
 - .sh = Proper extension of a shell script. Should be executed in your command line like this: `./test.sh`. It is indeed interpreted and not compiled, hence why it is often called a script.
@@ -152,15 +162,20 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 <!-- - **`ELIF[]`** -->
 
+<!-- **`SWITCH[]`** -->
+
 # POWERSHELL
 
 ## COMMAND LINE INTERPRETER
+
 > [!NOTE]
 > The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, even sporting a unique name for its commands, `cmdlets` (meaning commandlets, very adorable), however i find the one to one ressemblence of default aliases for some of these commands and basic BASH commands to be a proof of at least some degree of inspiration from BASH, including the presence of a `man` command. Arguments for `cmdlets` are often to be preceded by an informative option-like `parameter`, but it can *sometimes* be ignored. 
 
 ### Syntax
+
 > [!NOTE]
-> POWERSHELL having parameter-based arguments virtually doubles the number of "options" for each command. Therefore, only the most common/useful parameters will be specified, i apologize in advance for the lack of exhaustiveness.
+> POWERSHELL having parameter-based arguments virtually doubles the number of "options" for each command. Therefore, only the most common/useful parameters will be specified, i apologize in advance and again for the lack of exhaustiveness.
+
 - **`Command-Name.OptionFunc`** `-Parameter 1` *`argument 1`* `-Parameter 2` *`argument 2`* `-Parameter n` *`argument n`* = The proper syntax for command execution and argument specification. The `-Parameter 1` can *sometimes* be omitted, then, the argument simply has to be put in the order the parameter would precede it if it were there. Some commands accept specialized functions accessed like the C direct acces operator (`.`) which allow to shape the output in a specific way, it can therefore be considered the equivalent for BASH options, i.e, ***how*** a command behaves.
 
 - `.` = Signifies the current directory in which you are situated.
@@ -177,38 +192,36 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **`Copy-Item`** *`-Path`* *`path_arg`* *`-Destination`* *`dest_arg`* = Self explanatory item copying function. Parameters can be omitted(`Copy-Item src dest`). It has the default aliases `cp` and `copy`.
 
-- **`Get-Content`** = Command used for reading a file's contents, but unlike its BASH equivalent `cat`, the content can also include the file's length.
+- **`Get-Content`** = Command used for reading a file's contents, but unlike its BASH equivalent `cat`, the content output can be modulated and include such things as a file's length, a certain number of lines from a file (`-TotalCount`), or reading a "alternate data stream".
 
-<!-- WIP -->
+- **`Remove-Item`** *`-Path`* *`path_arg`* = Permanently removes files, folders and links (equivelent to pressing the `DEL` key when selecting a file in the file explorer). Contrary to the trivial BASH `rm` options, the `Remove-Item` gives several, command-imbedded (i.e, not relying on wildcards like `*`) parameters for excluding files or filetypes (-Exclude), and only deleting specific file names (-Include), among others.
 
-<!-- - **`Remove-Item`** *`-Path`* *`path_arg`* -->
+<!-- - **`Rename-Item`** -->
 
-<!-- - `Rename-Item` -->
+<!-- - **`Get-Location`** -->
 
-<!-- - `Get-Location` -->
+<!-- - **`Rename-Item`** -->
 
-<!-- - `Rename-Item` -->
+<!-- - **`Move-Item`**  -->
 
-<!-- -**`Move-Item`**  -->
+<!-- - **`Clear-Content`**  -->
 
-<!-- -**`Clear-Content`**  -->
+<!-- - **`Set-Content`**  -->
 
-<!-- -**`Set-Content`**  -->
-
-<!-- -**`Add-Content`**  -->
+<!-- - **`Add-Content`**  -->
 
 <!-- ### Commands (advanced) -->
 
-<!-- - `Invoke-Item` -->
+<!-- - **`Invoke-Item`** -->
 
-<!-- `Set-Date` -->
+<!-- - **`Set-Date`** -->
 
-<!-- `Get-Dat` -->
+<!-- - **`Get-Date`** -->
 
-<!-- - Get-ChildItem -->
+<!-- - **`Get-ChildItem`** -->
 
-<!-- Get-Unique -->
+<!-- - **`Get-Unique`** -->
 
-<!-- Measure-Object -->
+<!-- - **`Measure-Object`** -->
 
-<!-- Measure-Object -->
+<!-- - **`Measure-Object`** -->

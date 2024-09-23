@@ -1,6 +1,6 @@
 # Shell Documentation
 > [!IMPORTANT]
-> Keep in mind that this small project is intrinsically a constant WIP since I use it as my own form of documentation. As I learn more, I will keep this repository updated with new commits.
+> Keep in mind that this small project is intrinsically a constant WIP since I use it as my own form of documentation. As I learn more, I will keep this repository updated with new content.
 
 ## Description
 The following project is personal documentation for Shell basics and Shell scripting. It is meant to be both as descriptive and as simple as possible to help in remembering the various elements touched on in this short, simplified manual.
@@ -21,11 +21,12 @@ To avoid confusion when explaining any aspect, i made all my explanations respec
 - Footnoted elements generally won't be explained in any more detail than they already have been, but will sometimes feature links to the relevant subject. View them as an invitation to do your own research, it is what we call in the universe of debating and talks *"tendre une perche"*.[^1]
 
 [^1]: this note won't go into much detail to not overburden the explanation, it's just here to give you a lead.
+
 ### Contributing
 If you'd like to contribute to this project, please follow these guidelines:
 
 1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
+2. Create a new branch for your content.
 3. Make your changes and commit them.
 4. Push your changes to your fork.
 5. Submit a pull request.
