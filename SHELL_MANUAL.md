@@ -4,8 +4,7 @@ A short history of command line interpreters.
 
 1971: Ken Thompson writes the first shell in history, the Thompson Shell, obviously
 missing a good chunk of functionalities present in modern shells, such as scripting,
-it is nonetheless the precursor for more accessible and ergonomical file manipulation and command
-execution. The name "shell" comes from the fact that it "wraps around" an OS's kernel
+it is nonetheless the precursor for more accessible and ergonomical file manipulation and command execution. The name "shell" comes from the fact that it "wraps around" an OS's kernel
 both as a safety and usability measure.
 
 1973: Dennis Ritchie creates the C programming language at the AT&T labs. By inspiring the syntax and the functionality of its successors, it is now considered the basis for almost every programming and scripting language widely used today, including Shell scripting.
@@ -62,6 +61,8 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - `command` `>` `/dev/null` = Syntax to discard the output, indeed sometimes we are not interested in the output of a command, it is in these cases that we may need the directory */dev/null/*, with *null* being a channel that completely removes any trace of data directed to it along with the data itself. It is often used with the syntax `2>&1`, which first directs *STDERR* to *STDOUT* and then *STDOUT* to *null*
 
+<!-- - *`'/n'`* = escape sequence -->
+
 ### Commands (basic)
 
 - **`clear`** = Clears the terminal of all its formatted output.
@@ -82,7 +83,7 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - **`grep`** *`pattern`* = When used jointly with a command that displays any sort of formatted output, selectivly displays only those matching patterns of words specified as first argument. Must be preceded with `|`.
 
-<!-- - **`wc`** = Content counter, saide content can be anything between the number of characters, -->
+<!-- - **`wc`** = Content counter, said content can be anything between the number of characters, -->
 
 ### Commands (advanced)
 
@@ -149,11 +150,11 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **`unset`** *`var_name`* = Rids a variable of its value.
 
-- **`readonly`** *`var_name`* = Makes a variable "read only" (equivalent to the C "const" keyword). It therfor becomes unsable to take any new assignement.
+- **`readonly`** *`var_name`* = Makes a variable "read only" (equivalent to the C "const" keyword). It therfore becomes unsable to take any new assignement.
 
-- **`echo`** *`"str"`* = Prints the string specified as first argument to the command line as formatted output. 
+- **`echo`** *`"str"`* = Prints the string, character or escape sequence (or of course, all at once) specified as first argument to the command line as formatted output. 
 
-- **(BACKTICK)`expr** *operations`(BACKTICK)* = Default command for shell based arithmetic operations. All operations within the backticks (replaced by onomatopoeia because of Markdown[^5] syntax) are
+- **(BACKTICK)`expr** *operations`(BACKTICK)* = Default command for shell based arithmetic operations. All operations within the backticks (replaced by onomatopoeia because of Markdown[^5] syntax) are considered as arithmetic operations and allow
 [^5] Markdown is a 2004 "lightweight markup language" designed for formatting raw text data. Widely implemented today from ChatGPT answers to general documentation, hence the use of the .md (**M**ark**D**own) file extension by github. See https://en.wikipedia.org/wiki/Markdown.
 
 <!-- - **`IF[]`** -->
@@ -176,7 +177,7 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 > [!NOTE]
 > POWERSHELL having parameter-based arguments virtually doubles the number of "options" for each command. Therefore, only the most common/useful parameters will be specified, i apologize in advance and again for the lack of exhaustiveness.
 
-- **`Command-Name.OptionFunc`** `-Parameter 1` *`argument 1`* `-Parameter 2` *`argument 2`* `-Parameter n` *`argument n`* = The proper syntax for command execution and argument specification. The `-Parameter 1` can *sometimes* be omitted, then, the argument simply has to be put in the order the parameter would precede it if it were there. Some commands accept specialized functions accessed like the C direct acces operator (`.`) which allow to shape the output in a specific way, it can therefore be considered the equivalent for BASH options, i.e, ***how*** a command behaves.
+- **`Command-Name.OptionFunc`** `-Parameter 1` *`argument 1`* `-Parameter 2` *`argument 2`* `-Parameter n` *`argument n`* = The proper syntax for cmdlets execution and argument specification. The `-Parameter 1` can *sometimes* be omitted, then, the argument simply has to be put in the order the parameter would precede it if it were there. Some commands accept specialized functions accessed like with the C direct access operator (`.`) which allow to shape the output in a specific way, it can therefore be considered the equivalent for BASH options, i.e, ***how*** a command behaves.
 
 - `.` = Signifies the current directory in which you are situated.
 
@@ -196,13 +197,16 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **`Remove-Item`** *`-Path`* *`path_arg`* = Permanently removes files, folders and links (equivelent to pressing the `DEL` key when selecting a file in the file explorer). Contrary to the trivial BASH `rm` options, the `Remove-Item` gives several, command-imbedded (i.e, not relying on wildcards like `*`) parameters for excluding files or filetypes (-Exclude), and only deleting specific file names (-Include), among others.
 
-<!-- - **`Rename-Item`** -->
+- **`Move-Item`** *`-Path`* *`path_arg`* = Moves files from a source to a destination, and unlike BASH, can't be used to rename files. Included with the alias `mv`.
+
+- **`Rename-Item`** *-Path* *`path_arg`* *`-NewName`* *`new_name_arg`* = Instead of using the `mv` command to rename entities in your filesystem such as in bash, there is a separate command for that in POWERSHELL, and a separate alias `rni`.
+
+- **`Sort-Object`** -
+
+> [!NOTE]
+> As you may have noticed, in contrast to the laconic and cryptic bash commands and their plethora of flags, some cmdlets are quite explicit and redundant in their names and functionalities, a trend that seems to endure in most sets of cmdlets. You could say this hyper-ramification (one command does one thing) is again a result of a design philosophy, to make the cmdlets as understandable as possible with a Verb-Noun naming convention.
 
 <!-- - **`Get-Location`** -->
-
-<!-- - **`Rename-Item`** -->
-
-<!-- - **`Move-Item`**  -->
 
 <!-- - **`Clear-Content`**  -->
 
@@ -210,7 +214,11 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 <!-- - **`Add-Content`**  -->
 
-<!-- ### Commands (advanced) -->
+### Commands (advanced)
+
+- **`Get-Unique`** *`-InputObject`* *`object_arg`* = Only display duplicate values 1 time from a sorted table. Therefore, often used in tandem with the `Sort-Object` command.
+
+- **`Get-ChildItem`** *``* = 
 
 <!-- - **`Invoke-Item`** -->
 
@@ -218,9 +226,7 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 <!-- - **`Get-Date`** -->
 
-<!-- - **`Get-ChildItem`** -->
 
-<!-- - **`Get-Unique`** -->
 
 <!-- - **`Measure-Object`** -->
 
