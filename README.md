@@ -8,7 +8,7 @@ The following project is personal documentation for Shell basics and Shell scrip
 ## Guidelines
 As I mentioned, it is meant to be as thorough as a learner can make it, but it prioritizes intelligibility. Therefore, some aspects may be given less attention in favor of other descriptive points, such as the exact syntax. For example i won't detail *all* of the flags used for the described commands. For anyone who found this page and cares enough to stay, view this manual as a simplified, more beginner-friendly version of original IEEE/POSIX/UNIX documentation you may usually find.
 > [!NOTE]
-> Still, if you wish for a more extensive coverage of the talked about themes, nothing is better than the standard UNIX user manual, to access it (for BASH and linux Shells), simply type **`man`** *`cmd`* where *cmd* is the command of which you want to learn the function, syntax, and much more (Works as well with standard C library functions). POWERSHELL uses the equivalent, updatable **`Get-Help`** command.
+> Still, if you wish for a more extensive coverage of the talked about themes, nothing is better than the standard UNIX user manual, to access it (for BASH and linux Shells), simply type **`man`** *`cmd`* where *cmd* is the command of which you want to learn the function, syntax, and much more (Works as well with standard C library functions). POWERSHELL uses the equivalent, updatable `Get-Help` cmdlet, as well as another simpler `Get-Command` cmdlet.
 
 ### Caption and format
 To avoid confusion when explaining any aspect, i made all my explanations respect a few formatting conventions.
