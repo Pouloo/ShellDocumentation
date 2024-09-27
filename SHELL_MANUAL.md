@@ -16,7 +16,7 @@ both as a safety and usability measure.
 1989: Creation of BASH, the Bourne-Again Shell, by Brian Fox and the GNU project. With It is without a doubt the most widely used shell today.
 
 2004: First public presentation of MONAD (named after the book Monadology) a .NET framework based shell considered by its creators and users alike to be the prototype for POWERSHELL. The project's chief architect, Jeffrey Snover, meant it as a way to make linux tools available on a Windows system.[^1]
-[^1] We can notice part of this design philosophy with some default command aliases that come pre-assigned when installing the latest version of POWERSHELL, which make some commands almost identical to their unix counterpart.
+[^1] We can notice part of this design philosophy with some default command aliases that come pre-assigned when installing the latest version of POWERSHELL, which make some commands almost identical to their UNIX counterpart.
 
 2006: Release of POWERSHELL 1.0 on Windows vista, XP, and server 2003. The latest version of powershell is POWERSHELL 5.0, and comes with most feature we expect from a modern CLI.
 > [!NOTE]
@@ -44,7 +44,7 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - `~` = Signifies the user's home directory. It's defined as a directory containing a user's personal files .
 
-- `/` = Delimiter for specifing directories. The *slash* is typical of unix systems (linux, solaris, slackware...).
+- `/` = Delimiter for specifing directories. The *slash* is typical of UNIX systems (linux, solaris, slackware...).
 
 - *`cmd1`* **`|`** *`cmd2`*= Pipe, allows for joined simultaneous execution of multiple commands, more accurately, making *cmd1*'s output be *cmd2*'s input. Some commands however don't "get along" when used with the pipe, therefore make sure you use commands that are relevant to eachother's functionalities and outputs. The workings of the pipe align well with the UNIX philosophy principle of *"One function's output should be another's input"*, and are technically more complexe than this short manual can describe.
 
@@ -67,7 +67,7 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - **`clear`** = Clears the terminal of all its formatted output.
 
-- **`pwd`** = Prints the current directory (in which you are situated).
+- **`pwd`** = Prints the current directory (in which you are situated) in the classic UNIX directory delimiting (`/`). Takes no parameters.
 
 - **`cd`** *`/directory/`* = Changes the directory, takes the directory as argument.
 
@@ -83,11 +83,13 @@ Commands and essential syntax that are a must-know for any beginner programmer i
 
 - **`grep`** *`pattern`* = When used jointly with a command that displays any sort of formatted output, selectivly displays only those matching patterns of words specified as first argument. Must be preceded with `|`.
 
+<!-- - **`pushd`** ; **`popd`** ; **`dirs`** = These three commands go hand in hand, hence why i specified them together-->
+
 <!-- - **`wc`** = Content counter, said content can be anything between the number of characters, -->
 
 ### Commands (advanced)
 
-- **`alias`** *`identifier="cmd1; cmd2; cmdn"`* = Set alias, it can be anything from a series of in-order executed commands to script functions called by a user defined `identifier`, allowing for simplicity and egonomics within the comfort of the terminal.
+- **`alias`** *`identifier="cmd1; cmd2; cmdn"`* = Set alias, it can be anything from a series of in-order executed commands to script functions, all called by a user defined `identifier`, allowing for simplicity and egonomics within the comfort of the terminal.
 
 <!-- - **`sed`** -->
 
@@ -112,7 +114,7 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - .sh = Proper extension of a shell script. Should be executed in your command line like this: `./test.sh`. It is indeed interpreted and not compiled, hence why it is often called a script.
 
-- **`#!/bin/sh`** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on unix systems. You may in some capacity see it as the Shell equivalent for the C `#include <lib.h>`, only instead of directing towards a standard library of functions (`<lib.h>`), it directs towards the interpreter. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*).
+- **`#!/bin/sh`** = Proper syntax for the **shebang construct** (directory to the proper shell interpreter), this directory is present by default on UNIX systems. You may in some capacity see it as the Shell equivalent for the C `#include <lib.h>`, only instead of directing towards a standard library of functions (`<lib.h>`), it directs towards the interpreter. May need additional specifications about what shell is used since Ubuntu 6.10 (*See note above ↑*).
 
 - **`#`** = Signifies a comment. At first, you may find them most useful to "comment out" portions of code you don't need, but you will ultimately not find any better use for them than to leave notes for yourself and other potential contributors because that is their primary function. Indeed, programmers are quite forgetful, and it is crucial that you make the most algorithmically challenging sections of your code, the most well and intelligibly described ones.
 
@@ -170,7 +172,7 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 ## COMMAND LINE INTERPRETER
 
 > [!NOTE]
-> The base syntax of powershell couldn't be more different from bash and other unix-like shells and terminals, even sporting a unique name for its commands, `cmdlets` (meaning commandlets, very adorable), however i find the one to one ressemblence of default aliases for some of these commands and basic BASH commands to be a proof of at least some degree of inspiration from BASH, including the presence of a `man` command. Arguments for `cmdlets` are often to be preceded by an informative option-like `parameter`, but it can *sometimes* be ignored. 
+> The base syntax of powershell couldn't be more different from bash and other UNIX-like shells and terminals, even sporting a unique name for its commands, `cmdlets` (meaning commandlets, very adorable), however i find the one to one ressemblence of default aliases for some of these commands and basic BASH commands to be a proof of at least some degree of inspiration from BASH, including the presence of a `man` command. Arguments for `cmdlets` are often to be preceded by an informative option-like `parameter`, but it can *sometimes* be ignored. 
 
 ### Syntax
 
@@ -189,6 +191,10 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 ### Commands (basic)
 
+- **`Get-Location`** = Non argumented (taking no argument) cmdlet displaying the current directory (in which the user is currently situated) in the classic MS-DOS/Windows fashion, with the backslash `\`. Specify the drive in which you want to search the path with `-PSDrive` `drive_letter`
+
+<!-- - **`Clear-Content`** `f` = Deletes all content of the file. -->
+
 - **`New-Item`** *`-Path`* *`path_arg`* *`-ItemType`* *`type_arg`* =  The multipurpose filesystem element creator command in all its glory. Place the absolute or realtive path in which you want to create the file or folder (including the name of said file!) and the file type (Arguments `File`, `Directory`, `SymbolicLink`, `Junction`, `HardLink`) Parameters can be omitted(`New-Item newfile`). Doesn't have default aliases.
 
 - **`Copy-Item`** *`-Path`* *`path_arg`* *`-Destination`* *`dest_arg`* = Self explanatory item copying function. Parameters can be omitted(`Copy-Item src dest`). It has the default aliases `cp` and `copy`.
@@ -201,14 +207,10 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **`Rename-Item`** *-Path* *`path_arg`* *`-NewName`* *`new_name_arg`* = Instead of using the `mv` command to rename entities in your filesystem such as in bash, there is a separate command for that in POWERSHELL, and a separate alias `rni`.
 
-- **`Sort-Object`** -
-
+- **`Sort-Object`** *`-Proprety`* *`object`* = Sorts table of unsorted (obviously) integers or alphanumerical characters in crescent (increasing) order.
+ 
 > [!NOTE]
 > As you may have noticed, in contrast to the laconic and cryptic bash commands and their plethora of flags, some cmdlets are quite explicit and redundant in their names and functionalities, a trend that seems to endure in most sets of cmdlets. You could say this hyper-ramification (one command does one thing) is again a result of a design philosophy, to make the cmdlets as understandable as possible with a Verb-Noun naming convention.
-
-<!-- - **`Get-Location`** -->
-
-<!-- - **`Clear-Content`**  -->
 
 <!-- - **`Set-Content`**  -->
 
@@ -216,7 +218,7 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 ### Commands (advanced)
 
-- **`Get-Unique`** *`-InputObject`* *`object_arg`* = Only display duplicate values 1 time from a sorted table. Therefore, often used in tandem with the `Sort-Object` command.
+- **`Get-Unique`** *`-InputObject`* *`object`* = Only display duplicate values 1 time from a sorted table. Therefore, often used in tandem with the `Sort-Object` command.
 
 - **`Get-ChildItem`** *``* = 
 
