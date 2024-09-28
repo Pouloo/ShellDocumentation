@@ -228,8 +228,6 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 <!-- - **`Get-Date`** -->
 
-
-
 <!-- - **`Measure-Object`** -->
 
 <!-- - **`Measure-Object`** -->
