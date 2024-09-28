@@ -3,10 +3,10 @@
 > Keep in mind that this small project is intrinsically a constant WIP since I use it as my own form of documentation. As I learn more, I will keep this repository updated with new content.
 
 ## Description
-The following project is personal documentation for Shell basics and Shell scripting. It is meant to be both as descriptive and as simple as possible to help in remembering the various elements touched on in this short, simplified manual.
+The following project is personal documentation for Shell basics and Shell scripting; at the current time, it includes BASH, and POWERSHELL. It is meant to be both as descriptive and as simple as possible to help in remembering the various elements touched on in this short, simplified manual. I maintain this project for two main reasons: firstly, i use it to train to write documentation; secondly, like they say, *the best way to learn, is to explain*, so this is exacly what i am doing (: .
 
 ## Guidelines
-As I mentioned, it is meant to be as thorough as a learner can make it, but it prioritizes intelligibility. Therefore, some aspects may be given less attention in favor of other descriptive points, such as the exact syntax. For example i won't detail *all* of the flags used for the described commands. For anyone who found this page and cares enough to stay, view this manual as a simplified, more beginner-friendly version of original IEEE/POSIX/UNIX documentation you may usually find.
+As I mentioned, this project can be thorough, but it prioritizes intelligibility. Therefore, some aspects may be given less attention in favor of other descriptive points, such as the exact syntax. For example i won't detail *all* of the flags used for the described commands. View this manual as a simplified, more beginner-friendly version of original IEEE/POSIX/UNIX documentation you may usually find on the web.
 > [!NOTE]
 > Still, if you wish for a more extensive coverage of the talked about themes, nothing is better than the standard UNIX user manual, to access it (for BASH and linux Shells), simply type **`man`** *`cmd`* where *cmd* is the command of which you want to learn the function, syntax, and much more (Works as well with standard C library functions). POWERSHELL uses the equivalent, updatable `Get-Help` cmdlet, as well as another simpler `Get-Command` cmdlet.
 

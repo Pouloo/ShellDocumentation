@@ -193,11 +193,15 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **`Get-Location`** = Non argumented (taking no argument) cmdlet displaying the current directory (in which the user is currently situated) in the classic MS-DOS/Windows fashion, with the backslash `\`. Specify the drive in which you want to search the path with `-PSDrive` `drive_letter`
 
-<!-- - **`Clear-Content`** `f` = Deletes all content of the file. -->
+- **`Clear-Content`** `file` = Deletes all content of the file.
 
 - **`New-Item`** *`-Path`* *`path_arg`* *`-ItemType`* *`type_arg`* =  The multipurpose filesystem element creator command in all its glory. Place the absolute or realtive path in which you want to create the file or folder (including the name of said file!) and the file type (Arguments `File`, `Directory`, `SymbolicLink`, `Junction`, `HardLink`) Parameters can be omitted(`New-Item newfile`). Doesn't have default aliases.
 
 - **`Copy-Item`** *`-Path`* *`path_arg`* *`-Destination`* *`dest_arg`* = Self explanatory item copying function. Parameters can be omitted(`Copy-Item src dest`). It has the default aliases `cp` and `copy`.
+
+- **`Set-Content`** *-Path* *`path_arg`* *-Value* *`string`* = Writes and replaces the content of the writable file specified at `-Path`, by the string of characters at `-Value`. If no file with the name at path is present, the file is created.
+
+- **`Add-Content`** *-Path* *`path_arg`* *-Value* *`string`* = Writes the string specified at `-Value` after a newline written after the existing contents of the file at `-Path`.
 
 - **`Get-Content`** = Command used for reading a file's contents, but unlike its BASH equivalent `cat`, the content output can be modulated and include such things as a file's length, a certain number of lines from a file (`-TotalCount`), or reading a "alternate data stream".
 
@@ -207,27 +211,31 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **`Rename-Item`** *-Path* *`path_arg`* *`-NewName`* *`new_name_arg`* = Instead of using the `mv` command to rename entities in your filesystem such as in bash, there is a separate command for that in POWERSHELL, and a separate alias `rni`.
 
-- **`Sort-Object`** *`-Proprety`* *`object`* = Sorts table of unsorted (obviously) integers or alphanumerical characters in crescent (increasing) order.
- 
 > [!NOTE]
 > As you may have noticed, in contrast to the laconic and cryptic bash commands and their plethora of flags, some cmdlets are quite explicit and redundant in their names and functionalities, a trend that seems to endure in most sets of cmdlets. You could say this hyper-ramification (one command does one thing) is again a result of a design philosophy, to make the cmdlets as understandable as possible with a Verb-Noun naming convention.
 
-<!-- - **`Set-Content`**  -->
+- **`Sort-Object`** *`-Proprety`* *`object`* = Sorts table of unsorted (obviously) integers or alphanumerical characters in crescent (increasing) order.
+ 
+- **`Get-Culture`** = Displays a few localization settings for your current system, or following a specific name with `-Name`.
 
-<!-- - **`Add-Content`**  -->
+- **`Get-History`** *`-Count`* *`last_count_cmdlets`* = Displays the history of the last `count` commands in your currently open terminal session.
 
 ### Commands (advanced)
 
+- **`Format-List`** *`-InputObject`* *`data`* = Cmdlet used to format lots of information into an easily understandable list with separate attributes, as well as displaying additional information about the file timestamp, filetype, ecetera. Using it on regular files with few contents is redundand, and it is best utilized with a `|`, and a long output command
+
 - **`Get-Unique`** *`-InputObject`* *`object`* = Only display duplicate values 1 time from a sorted table. Therefore, often used in tandem with the `Sort-Object` command.
 
-- **`Get-ChildItem`** *``* = 
+- **`Invoke-Item`** *`-Path`* *`item`* = Performs the default action on the specified item. In other words, it emulates a *double-click* on an app, executable or file icon, and therefore opens it with the set default application.
 
-<!-- - **`Invoke-Item`** -->
+- **`Compare-Object`** *`-ReferenceObject`* *`ref_content_object`* *`-DifferenceObject`* *`diff_content_object`* = POSH equivalent of the BASH `diff` (coincidently accessible through the `diff` alias). Displays the difference between specified **objects** (and these objects DO NOT include a file path, only their contents accessed separatly, for instance with `Get-Content`)
 
-<!-- - **`Set-Date`** -->
+- **`Measure-Object`** *`-Object`* *`object`* = Displays information such as the number of characters, words, and lines of a string object specified as argument (-Character, -Line, -Word). Can be used to measures this data on a file by getting the content from said file.
+
+<!-- - **`Set-Date`** =  -->
 
 <!-- - **`Get-Date`** -->
 
 <!-- - **`Measure-Object`** -->
 
-<!-- - **`Measure-Object`** -->
+<!-- - **`Get-ChildItem`** *``* =  -->
