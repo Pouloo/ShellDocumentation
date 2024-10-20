@@ -122,7 +122,7 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **`$VAR_NAME`** = Syntax to access a variable, and therefore its value. Note that the dollar sign (which is the default prompt for bash) is used for accessing, and using it to assign a value to a variable will result in syntax errors.
 
-- **`$0 $1 $2 $n`** = Respective syntax for the access to arguments specified when running your script in your command line. $0 is logically the name of the script being run, and $1 is the argument after the script. `./your_shell_script.sh` `"argument 1"`, note that arguments are by default separated by whitespaces[^3], therefore to include arguments with spaces in their file name, you should use double quotations.
+- **`$0 $1 $2 $n`** = Respective syntax for the access to arguments specified when running your script in your command line. $0 is logically the name of the script being run, and $1 is the argument after the script. `./your_shell_script.sh` `"argument 1"`, note that arguments are by default separated by whitespaces[^3], therefore to include arguments with spaces in their file name, you should use double quotations. When used inside a function body, they refer to the function's parameters/arguments, and not the program's.
 [^3] Spaces, tabs, newlines and other "invisible characters", particularly those having a decimal value from 9 to 13, as well as 32, on the ASCII table.
 
 - **`$#`** = Stores the number of arguments supplied to the scripts. You may view it as the shell equivalent of the C "`int argc`" parameter.
@@ -159,13 +159,21 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 - **(BACKTICK)`expr** *operations`(BACKTICK)* = Default command for shell based arithmetic operations. All operations within the backticks (replaced by onomatopoeia because of Markdown[^5] syntax) are considered as arithmetic operations and allow
 [^5] Markdown is a 2004 "lightweight markup language" designed for formatting raw text data. Widely implemented today from ChatGPT answers to general documentation, hence the use of the .md (**M**ark**D**own) file extension by github. See https://en.wikipedia.org/wiki/Markdown.
 
-<!-- - **`IF[]`** -->
+<!-- - **`if [ ] then fi`** -->
 
-<!-- - **`ELSE[]`** -->
+<!-- - **`else [ ] fi`** -->
 
-<!-- - **`ELIF[]`** -->
+<!-- - **`elif [ ] then fi`** -->
 
-<!-- **`SWITCH[]`** -->
+<!-- **`until [ ] do done`** -->
+
+<!-- **`while [ ] do done`** -->
+
+<!-- **`for [ ] do done`** -->
+
+<!-- **`case $VAR in`** -->
+
+<!-- **`select $VAR val1 valn do done`** -->
 
 # POWERSHELL
 
@@ -230,7 +238,7 @@ Syntax, proper usage of functionalities and mandatory structures specific to she
 
 - **`Compare-Object`** *`-ReferenceObject`* *`ref_content_object`* *`-DifferenceObject`* *`diff_content_object`* = POSH equivalent of the BASH `diff` (coincidently accessible through the `diff` alias). Displays the difference between specified **objects** (and these objects DO NOT include a file path, only their contents accessed separatly, for instance with `Get-Content`)
 
-- **`Measure-Object`** *`-Object`* *`object`* = Displays information such as the number of characters, words, and lines of a string object specified as argument (-Character, -Line, -Word). Can be used to measures this data on a file by getting the content from said file.
+- **`Measure-Object`** *`-Object`* *`object`* = Displays information such as the number of characters, words, and lines of a string object specified as argument (-Character, -Line, -Word). Can be used to measure this data on a file by getting the content from said file.
 
 <!-- - **`Set-Date`** =  -->
 
